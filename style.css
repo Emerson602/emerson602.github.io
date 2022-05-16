@@ -31,3 +31,10 @@
 	color: #fff;
 	background-color: #7B68EE;
 }
+
+.container button:hover {
+
+	cursor: pointer;
+	background-color: #008000;
+	transition: 1s; 
+}
