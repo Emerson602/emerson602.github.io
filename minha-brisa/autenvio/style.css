@@ -1,0 +1,637 @@
+	/*reset-initial*/
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+/*reset-end*/
+
+/*preloader-inicio*/
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#083D93;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+}
+
+.loader::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    margin: 8px;
+    animation: spin 1.2s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*preloader-final*/
+
+/*whatsapp botão inicio*/	
+		.pulse {
+			background-color: #01e675;
+			color: #fff;
+			border-radius: 10px;
+			padding: 2px 3px 2px 3px;
+			position: fixed;
+			top: 40vh;
+			right: 2%;
+			z-index: 3;
+		}
+
+		.pulse:hover {
+
+			transition: 1s;
+			background-color: #F56E28;
+		}
+
+		.fa-whatsapp {
+
+			font-size: 2.5rem;	
+			
+
+		}
+
+	/*whatsapp botão final*/	
+
+/*cabecalho-initial*/
+
+.cabecalho {
+
+	height: 25vh;
+	background-color: #fff;
+
+}
+
+
+.container-pre-nav {
+
+	background-color: #1E2D69;
+	height: 4.5vh;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	
+
+}
+
+@media (max-width: 500px) {
+
+
+	.container-pre-nav {
+	
+	justify-content: center;	
+
+}
+
+
+
+}
+
+.text {
+
+	margin-left: 40px;
+	font-size: 0.875rem;
+    font-family: "Barlow", "Poppins",sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.43;
+}
+
+
+@media (max-width: 500px) {
+
+
+	.text {
+	
+	margin-left:0px;	
+
+}
+}
+
+
+.container-nav {
+
+	
+	height: 21vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	
+}
+
+@media (max-width: 340px){
+
+
+	.container-nav {
+
+	
+	height: 21vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	
+}
+} 
+
+.logo {
+	position: relative;
+	left:10%;
+	width: 200px;
+	height: auto; 
+}
+
+@media (max-width: 700px){
+
+
+	.logo {
+	position: relative;
+	left:6%;	
+}
+} 
+
+
+@media (max-width: 400px){
+
+
+	.logo {
+	position: relative;
+	left:5%;
+	margin: 15px 0;
+	width: 180px;
+	height: auto;
+
+}
+} 
+
+
+
+@media (max-width: 340px){
+
+
+	.logo {
+	position: relative;
+	left:0%;
+	margin: 15px 0;
+
+}
+} 
+
+
+
+
+
+.line {
+
+	width: 100%; 		
+	border-color: #083D93;
+
+
+
+}
+
+
+@media (min-width: 340px) {
+
+	.line {
+
+	display: none;
+
+}
+
+} 
+
+
+.botao {
+
+	color: #fff;
+	background-color: #F56E28;
+	position: relative;
+	right:10%;		
+	width: 110px;
+	height: 45px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+}
+
+
+
+@media (max-width: 400px) {
+
+	.botao {
+
+		position: relative;
+		right:4%;	
+	}
+}
+
+
+@media (max-width: 340px) {
+
+	.botao {
+
+		position: relative;
+		right:0;	
+		padding: 12px 10px 12px 10px;
+		margin-top: 50px;
+	}
+}
+
+
+
+
+
+
+.botao:hover {
+
+	background-color: #083D93;
+	transition: 0.5s;
+	cursor: pointer;
+	
+
+}
+
+
+.link-popup {
+
+	color: #fff;
+	background-color: #F56E28;	
+	width: 110px;
+	height: 45px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	text-decoration: none;	
+	padding: 8px 14px 8px 14px;
+	border-radius: 2px;
+
+}
+
+.link-popup:hover {
+
+	background-color: #083D93;
+	transition: 0.5s;
+	cursor: pointer;
+
+}
+/*cabecalho-end*/  
+
+
+
+
+
+/*rodape-initial*/
+	
+.rodape {
+
+	height: 400px;
+	width: 100%;
+	background-color:#1E2D69;	
+	position: relative;
+	top: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+} 
+
+
+@media (max-width: 1260px) {
+
+	.rodape {
+
+		position: relative;
+		top: 300px;
+		
+	}
+} 
+
+
+@media (max-width: 850px) {
+
+	.rodape {
+
+		height: 450px;	
+	}
+}
+
+
+@media (max-width: 200px) {
+
+	.rodape {
+
+		position: relative;
+		top: 2600px;	
+	}
+}
+
+
+
+@media (max-width: 460px) {
+
+	.rodape {
+
+		position: relative;
+		top: 300px;
+		height: 480px;		
+	}
+} 
+
+
+@media (max-width: 460px) {
+
+	.rodape {
+
+		
+		height: 550px;
+		text-align: center;		
+	}
+}
+
+.container-rp {
+
+	display: flex;
+	flex-direction: row;	
+	height: auto;
+	width: auto;
+	color: #fff; 	
+	font-family: "Barlow", "Poppins",sans-serif;
+	margin: 10px;
+	
+}
+
+
+@media (max-width: 850px) {
+
+	.container-rp {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+}
+
+.element-rp-1 { 
+	
+	padding: 2px;
+	
+}
+
+
+@media (min-width: 850px) {
+
+	.element-rp-1 { 
+	
+	padding: 2px 15px 2px 2px ;
+	border-right: solid #fff 1px ;
+}
+}
+
+
+
+.element-rp-2 {
+
+	padding: 2px 15px 2px 15px;
+	word-break: normal;
+	line-height: 30px;
+	position: relative;
+	top: 4px;
+	font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+
+	.element-rp-2 { 
+	
+	padding: 2px;
+	
+}
+}
+
+
+.id-rp {
+
+	position: relative;
+	top: 50px;
+	color: #fff; 	
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-size: 1.1rem;
+}
+
+.ut-rp {
+
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Barlow", "Poppins",sans-serif;
+	color: #fff;
+	font-size: 0.7rem;
+	position: relative;
+	top: 100px;
+	border-top: solid #2E3D69 1px; 
+	padding-top: 16px; 	
+}
+
+.ut-rp-tx {
+	position: relative;
+	top: 2px;
+}
+
+@media (max-width: 450px) {
+
+	.ut-rp-tx {
+	position: relative;
+	top: 50%;
+}
+}
+/*rodape-end*/
+
+
+
+.contador {
+
+	width: 1px;
+	height: 1px;
+	position: absolute; 
+	display: none;
+
+}
+
+
+
+/*Guide  - end*/
+
+/*=========================================formulario inicio==========================================================*/
+
+body {
+	background-color: #F4F5FA;
+}
+.form-camp {
+	width: 900px;
+	height: auto; 
+
+}
+
+.container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	color: #083D93; 	
+	text-align: center;
+	text-transform: uppercase; 
+
+} 
+
+
+
+
+
+legend {
+
+	font-size: 1.6rem;
+	position: relative;
+	top: 120px;
+	font-weight: bolder;
+
+}
+
+
+fieldset {
+	
+	padding: 50px;
+	border-width: 0;
+
+}
+
+.form-1 {
+
+	width: 400px;
+	height: 45px;
+	border-radius: 2px;
+	border-width: 1px;
+	margin: 5px 10px 20px 10px;
+	border-radius: 2px;
+	text-align: center;
+	font-size: 1.1rem;
+	position: relative;
+	top: 180px;   
+	color: #083D93;
+	
+}
+
+@media (max-width: 850px) {
+ 
+  .form-1 {
+
+  	width: 60vw;	
+  }
+}	
+
+
+@media (max-width: 450px) {
+ 
+  .form-1 {
+
+  	width: 60vw;	
+  	margin: 5px 2px 20px 2px;
+  }
+}	
+
+
+
+
+
+label {
+
+	position: relative;
+	top: 180px;
+}
+
+
+
+
+
+
+.button-form {
+
+	height: 55px;
+	width: 200px;
+	font-size: 1rem;
+	color: #fff;
+	background-color: #F56E28;
+	border-width: 0px;
+	box-shadow: none;
+	margin: 20px 10px 50px 10px;
+	position: relative;
+	top: 200px;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.button-form:hover {
+
+	background-color: #083D93;
+}
+
+@media (max-width: 850px) {
+ 
+  .button-form {
+
+  	width: 40vw;
+  	margin: 20px 5px 50px 5px;	
+  }
+}	
+
+
+@media (max-width: 450px) {
+ 
+  .button-form {
+
+  	width: 50vw;	
+  }
+}	
+
+
+
+
+/*=========================================formulario final==========================================================*/
