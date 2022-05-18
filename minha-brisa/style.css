@@ -2237,7 +2237,7 @@
 .container-faq button {
 
 	margin: 10px 0 0 50px;
-	background-color: #F56E28;
+	background-color: #083D93;
 	border: none;
 	color: #fff; 
 	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%); 	
@@ -2254,7 +2254,7 @@
 
 .container-faq button:hover {
 
-  	background-color: #083D93;	
+  	background-color: #F56E28;	
   	transition: 1s;
   	cursor: pointer;
   	outline: 0;
