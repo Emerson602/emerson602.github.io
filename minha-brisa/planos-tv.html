@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Planos Brisanet</title>
+	<title>Brisanet - Planos TV</title>
 	<link rel="stylesheet" type="text/css" href="style.css">			
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/x-icon" href="pics/favicon.ico">
@@ -20,20 +20,9 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<body style="overflow: hidden;" id="teste" onLoad="slide1 (), slide4 ()">  
-
-<!--popup-inicio
-
- 	
-
-   <div class="container-popup">
-
-      <a id="c-popup" onclick="myFunctionX()">
-      	<img class="popupimg" id="myPopup" src="imgs/popup.webp"></a>     	  		
-   </div>  
+<body id="teste" onLoad="slide1 (), slide4 ()">  
 
 
-popup-fim--> 
 
 	<!--preloader-inicio-->
 	
@@ -69,7 +58,7 @@ popup-fim-->
 			<a class="logo" href="index.html"><img class="img-logo" src="imgs/logo.webp"></a>	
 
 				<ul class="nav-desktop">
-				    <a href="#"><li>Início</li></a>						
+				    <a href="index.html"><li>Início</li></a>						
 
 				     <li class="nav-item dropdown">
 				      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -78,8 +67,8 @@ popup-fim-->
 
 				      <div class="dropdown-menu">
 
-				        <a class="dropdown-item" href="#">Internet</a>
-				        <a class="dropdown-item" href="#">Planos de TV</a>
+				        <a class="dropdown-item" href="planos-internet.html">Internet</a>
+				        <a class="dropdown-item" href="planos-tv.html">Planos de TV</a>
 				     
 				      </div>
 				    </li>
@@ -87,7 +76,7 @@ popup-fim-->
 
 				    <a href="#"><li>Contato</li></a>
 
-					<a href="#"><li>Sobre</li></a> 			
+					<a href="sobre.html"><li>Sobre</li></a> 			
 
 				</ul> 			
 
@@ -101,7 +90,7 @@ popup-fim-->
 						   <div class="toggle" onclick="menuToggle(this);"> 		     	
 
 				     		    <div class="menu-bar-1"></div>
-				     	     	<div class="menu-bar-2"></div>
+				     	       <div class="menu-bar-2"></div>
 				     		    <div class="menu-bar-3"></div>   		
 		     	
 		   	         	   </div> 
@@ -117,7 +106,7 @@ popup-fim-->
 
 
 							   <li>
-								   <a href="#" class="a_parent">
+								   <a href="index.html" class="a_parent">
 									    <div class="wrap">
 										        <span class="icon">
 											        
@@ -142,7 +131,7 @@ popup-fim-->
 										      	<ul>
 
 												<li>
-													<a href="#">
+													<a href="planos-internet.html">
 														<div class="wrap">
 															<span class="icon">
 																
@@ -157,7 +146,7 @@ popup-fim-->
 												
 
 												<li>
-													<a href="#">
+													<a href="planos-tv.html">
 														<div class="wrap">
 															<span class="icon">
 																
@@ -186,7 +175,7 @@ popup-fim-->
 
 
 									<li>
-										<a href="#"  class="a_parent">
+										<a href="sobre.html"  class="a_parent">
 											<div class="wrap">
 												<span class="icon">
 													
@@ -216,483 +205,19 @@ popup-fim-->
 
 	</header>
 
-	<!--slide inicio-->
+	
 
-		<div class="container-slide">
-
-			<div class="slide-desktop" id="main">
-				<img class="img-banner" src="bg-1.webp" alt="slide show" id="banner">  			
-			</div>
-
-
-			<div class="slide-mobile" id="main">
-				<img class="img-banner" src="bg-1.webp" alt="slide show" id="banner2">  			
-			</div>
-
-			
-		<div class="ld"></div>  
-
-			<div class="imgs-ld-1"></div>
-			<div class="imgs-ld-2"></div>
-			<div class="imgs-ld-3"></div>
-
-		</div>		
-
-	<!--slide fim-->
-
-	<main class="container-main"> 
-	  
-		<div class="container-citys">
-
-		<form class="lista" id="formulario"> 
-
-					<img src="imgs/logo.webp">
-
-
-					<label for="cidades">Selecione a sua cidade	:</label>
-			
-					<select class="campo" id="campo">
-						<option selected>Seleciona a cidade</option>
-						<option value="access">AL - Arapiraca</option>				
-						<option value="access">AL - Delmiro Gouveia</option>
-						<option value="access">AL - Maceió</option>
-						<option value="access">AL - Marechal Deodoro</option>
-						<option value="access">AL - Palmeira dos Índios</option>
-						<option value="access">AL - Rio Largo</option>
-						<option value="access">AL - São Miguel dos Campos</option>
-						<option value="access">BA - Ribeira de Pombal</option>
-						<option value="access">CE - Acaraú</option>
-						<option value="access">CE - Acopiara</option>
-						<option value="access">CE - Banabuiú</option>
-						<option value="access">CE - Barbalha</option>
-						<option value="access">CE - Brejo Santo</option>
-						<option value="access">CE - Cascavel</option>
-						<option value="access">CE - Cedro</option>
-						<option value="access">CE - Crateús</option>
-						<option value="access">CE - Caucaia</option>
-						<option value="access">CE - Crato</option>
-						<option value="access">CE - Eusébio</option>
-						<option value="access">CE - Fortaleza</option>
-						<option value="access">CE - Guaraciaba do Norte</option>
-						<option value="access">CE - Horizonte</option>
-						<option value="access">CE - Ibiapina</option>
-						<option value="access">CE - Icó</option>
-						<option value="access">CE - Iguatu</option>
-						<option value="access">CE - Ipú</option>
-						<option value="access">CE - Iracema</option>
-						<option value="access">CE - Itapajé</option>
-						<option value="access">CE - Itapipoca</option>
-						<option value="access">CE - Jaguaretama</option>
-						<option value="access">CE - Jaguaribara</option>
-						<option value="access">CE - Jaguaribe</option>
-						<option value="access">CE - Juazeiro do Norte</option>
-						<option value="access">CE - Lavras Mangabeira</option>
-						<option value="access">CE - Limoeiro do Norte</option>
-						<option value="access">CE - Maracanaú</option>
-						<option value="access">CE - Maranguape</option>
-						<option value="access">CE - Milagres</option>
-						<option value="access">CE - Missão Velha</option>
-						<option value="access">CE - Mombaça</option>
-						<option value="access">CE - Morada Nova</option>
-						<option value="access">CE - Orós</option>
-						<option value="access">CE - Pacajus</option>
-						<option value="access">CE - Paraipaba</option>
-						<option value="access">CE - Pedra Branca</option>
-						<option value="access">CE - Pereiro</option>
-						<option value="access">CE - Quixadá</option>
-						<option value="access">CE - Quixeramobim</option>
-						<option value="access">CE - Quixeré</option>
-						<option value="access">CE - Russas</option>
-						<option value="access">CE - São Benedito</option>
-						<option value="access">CE - Senador Pompeu</option>
-						<option value="access">CE - Sobral</option>
-						<option value="access">CE - Tabuleiro do Norte</option>
-						<option value="access">CE - Tauá</option>
-						<option value="access">CE - Tianguá</option>
-						<option value="access">CE - Ubajara</option>
-						<option value="access">CE - Várzea Alegre</option>
-						<option value="access">CE - Viçosa do Ceará</option>
-						<option value="access">PB - Bayeux</option>
-						<option value="access">PB - Cabedelo</option>
-						<option value="access">PB - Cajazeiras</option>
-						<option value="access">PB - Campina Grande</option>
-						<option value="access">PB - Catolé do Rocha</option>
-						<option value="access">PB - João Pessoa</option>
-						<option value="access">PB - Patos</option>
-						<option value="access">PB - Pombal</option>
-						<option value="access">PB - Santa Luzia</option>
-						<option value="access">PB - Santa Rita</option>
-						<option value="access">PB - São Bento</option>
-						<option value="access">PB - Sousa</option>
-						<option value="access">PB - Uiraúna</option>
-						<option value="access">PE - Abreu e Lima</option>
-						<option value="access">PE - Arcoverde</option>
-						<option value="access">PE - Araripina</option>
-						<option value="access">PE - Belo Jardim</option>
-						<option value="access">PE - Bezerros</option>
-						<option value="access">PE - Brejo da Madre de Deus</option>
-						<option value="access">PE - Cabo de Santo Agostinho</option>
-						<option value="access">PE - Camaragibe</option>
-						<option value="access">PE - Caruaru</option>
-						<option value="access">PE - Custódia</option>
-						<option value="access">PE - Gravatá</option>
-						<option value="access">PE - Garanhus</option>
-						<option value="access">PE - Igarassu</option>
-						<option value="access">PE - Limoeiro</option>
-						<option value="access">PE - Oricuri</option>
-						<option value="access">PE - Paulista</option>
-						<option value="access">PE - Pesqueira</option>
-						<option value="access">PE - Recife</option>
-						<option value="access">PE - Salgueiro</option>
-						<option value="access">PE - Santa Cruz do Capibaribe</option>
-						<option value="access">PE - São Lourenço da Mata</option>
-						<option value="access">PE - Serra Talhada</option>
-						<option value="access">PE - Surubim</option>
-						<option value="access">PE - Toritama</option>
-						<option value="access">PE - Vitória de Santo Antão</option>
-						<option value="access">PI - Altos</option>
-						<option value="access">PI - Campo Maior</option>
-						<option value="access">PI - Luís Correia</option>
-						<option value="access">PI - Picos</option>
-						<option value="access">PI - Teresina</option>
-						<option value="access">PI - Parnaíba</option>
-						<option value="access">PI - Piripiri</option>
-						<option value="access">RN - Assú</option>
-						<option value="access">RN - Baraúna</option>
-						<option value="access">RN - Caicó</option>
-						<option value="access">RN - Ceará-Mirim</option>
-						<option value="access">RN - Cel. João Pessoa</option>
-						<option value="access">RN - Doutor Severiano</option>
-						<option value="access">RN - Encanto</option>
-						<option value="access">RN - Extremoz</option>
-						<option value="access">RN - Francisco Dantas</option>
-						<option value="access">RN - José da Penha</option>
-						<option value="access">RN - Luís Gomes</option>
-						<option value="access">RN - Macaíba</option>
-						<option value="access">RN - Major Sales</option>
-						<option value="access">RN - Martins</option>
-						<option value="access">RN - Mossoró</option>
-						<option value="access">RN - Natal</option>
-						<option value="access">RN - Nísia Floresta</option>
-						<option value="access">RN - Parnamirim</option>
-						<option value="access">RN - Pau dos Ferros</option>
-						<option value="access">RN - Portalegre</option>
-						<option value="access">RN - Rafael Fernandes</option>
-						<option value="access">RN - São Gonçalo do Amarante</option>
-						<option value="access">RN - São José de Mipibu</option>
-						<option value="access">RN - São Miguel</option>
-						<option value="access">RN - Umarizal</option>
-						<option value="access">SE - Aracaju</option>
-						<option value="access">SE - Barra dos coqueiros</option>
-						<option value="access">SE - Estância</option>
-						<option value="access">SE - Itabaiana</option>
-						<option value="access">SE - Largato</option>
-						<option value="access">SE - Nossa Senhora do Socorro</option>
-						<option value="access">SE - São Cristóvão</option>
-						<option value="access">SE - Tobias Barreto</option>
-					</select> 					
-				
-
-
-		    <input id="myBtn" class="button-modal" type="submit" value="Confirmar">
-
-		</form>  
-
-	</div>
-
-
+	<main class="container-main">
 		
-		<div class="main-1">
-			<h2>Somos a líder em satisfação<br>
-				em pesquisa realizada pela Anatel.</h2>
-		</div>	
-		<div class="main-2"> 
+		
+		<div style="border:none" class="main-2"> 
 			<h2>As melhores opções de planos para você!</h2> 	
 			<img src="imgs/barra-2.svg">		
 		</div>
 
-		<div class="container-buttons">
+		
 
-			<button id="btn" onclick="myFunctionShare()">Clique para ver os planos de TV</button>
-			
-		</div>
-
-
-		<div id="container" class="main-3">
-
-				<!-- ========================1º========================-->
-			<div class="main-plano-1">
-
-			
-				<div>
-
-					<span class="main-plano-tt">Combo Ultra</span>
-					<span class="main-plano-tx-1">500 Mega</span>
-
-					<div class="main-plano-tx-2">
-
-						<img style="width: 22px; height: auto;" class="main-plano-img" src="imgs/icon-1.svg">
-						<span style="font-size:18px; text-decoration: line-through; margin: 0 7px 5px 0;">200 Mega</span>
-						<span style="color: #4caf50; font-size: 18px; font-weight: bolder;">500 Mega</span>
-
-					</div>
-				</div>	
-				
-				<div>
-					<img src="imgs/icon-2.svg">
-					<span style="margin-top: 5px;">Instalação Inclusa</span>
-				</div>
-
-				<div>
-					<img src="imgs/icon-3.svg">
-					<span style="margin-top: 5px;">100% fibra óptica</span>
-				</div>
-				
-				<div>
-					<img src="imgs/icon-4.svg">
-					<span style="margin-top: 5px;">Wi-fi de alta performance</span>
-				</div>
-
-				<div>
-					<img src="imgs/icon-5.svg">
-					<span style="margin-top: 5px;">Download 500 Mbps</span>
-				</div>
-
-				<div>
-					<img src="imgs/icon-6.svg">
-					<span style="margin-top: 5px;">Upload 250 Mbps</span>
-				</div>
-
-				<div>
-					<img style="width:auto; height: 15px;" src="imgs/icon-7.svg">
-					<span>Até 4 dispositivos via cabo</span>
-				</div>
-
-				<div>
-					<span style="margin: 10px 0 10px 40px;">Apps inclusos</span>
-				</div>
-
-				<div>
-					<img style="width:45px; height: auto; position: relative; left: 0px;" src="imgs/icon-8.webp">
-					<img style="width:45px; height: auto; position: relative; left: -35px;" src="imgs/icon-9.webp">
-					<img style="width:45px; height: auto; position: relative; left: -70px;" src="imgs/icon-10.svg">
-				</div>
-
-				<div>
-					<span>R$ 99,90</span>
-					<span style="font-size: 20px; margin-top: 10px;">/mês</span>
-				</div>
-
-				<a href="#"><button>Assine Já</button></a>
-
-			</div>  
-				<!-- ========================2º========================--> 
-					
-			<div class="main-plano-1">
-
-			
-				<div>
-
-					<span class="main-plano-tt">Ofertas</span>
-					<span class="main-plano-tx-1">50 Mega</span>
-
-					<div style="visibility: hidden;" class="main-plano-tx-2">
-
-						<img style="width: 22px; height: auto;" class="main-plano-img" src="imgs/icon-1.svg">
-						<span style="font-size:18px; text-decoration: line-through; margin: 0 7px 5px 0;">200 Mega</span>
-						<span style="color: #4caf50; font-size: 18px; font-weight: bolder;">500 Mega</span>
-
-					</div>
-				</div>	
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-2.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Instalação Inclusa</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-3.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">100% fibra óptica</span>
-				</div>
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-4.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Wi-fi de alta performance</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-5.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Download 50 Mbps</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-6.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Upload 25 Mbps</span>
-				</div>
-
-				<div>
-					<img style="width:auto; height: 15px; visibility: hidden;" src="imgs/icon-7.svg">
-					<span style="visibility: hidden;">Até 4 dispositivos via cabo</span>
-				</div>
-
-				<div>
-					<span style="margin: 10px 0 10px 40px;">Apps inclusos</span>
-				</div>
-
-				<div>
-					<img style="width:45px; height: auto; position: relative; left: 0px;" src="imgs/icon-9.webp">
-					<img style="width:45px; height: auto; position: relative; left: -35px; visibility: hidden;" src="imgs/icon-9.webp">
-					<img style="width:45px; height: auto; position: relative; left: -70px;visibility: hidden;" src="imgs/icon-10.svg">
-				</div>
-
-				<div>
-					<span>R$ 73,90</span>
-					<span style="font-size: 20px; margin-top: 10px;">/mês</span>
-				</div>
-
-				<a href="#"><button>Assine Já</button></a>
-
-			</div>  
-				<!-- ======================== 3º ========================-->  
-
-					
-			<div class="main-plano-1">
-
-			
-				<div>
-
-					<span class="main-plano-tt">Ofertas</span>
-					<span class="main-plano-tx-1">100 Mega</span>
-
-					<div style="visibility: hidden;" class="main-plano-tx-2">
-
-						<img style="width: 22px; height: auto;" class="main-plano-img" src="imgs/icon-1.svg">
-						<span style="font-size:18px; text-decoration: line-through; margin: 0 7px 5px 0;">200 Mega</span>
-						<span style="color: #4caf50; font-size: 18px; font-weight: bolder;">500 Mega</span>
-
-					</div>
-				</div>	
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-2.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Instalação Inclusa</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-3.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">100% fibra óptica</span>
-				</div>
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-4.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Wi-fi de alta performance</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-5.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Download 100 Mbps</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-6.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Upload 50 Mbps</span>
-				</div>
-
-				<div>
-					<img style="width:auto; height: 15px; visibility: hidden;" src="imgs/icon-7.svg">
-					<span style="visibility: hidden;">Até 4 dispositivos via cabo</span>
-				</div>
-
-				<div>
-					<span style="margin: 10px 0 10px 40px;">Apps inclusos</span>
-				</div>
-
-				<div>
-					<img style="width:45px; height: auto; position: relative; left: 0px;" src="imgs/icon-9.webp">
-					<img style="width:45px; height: auto; position: relative; left: -35px;" src="imgs/icon-10.svg">
-					<img style="width:45px; height: auto; position: relative; left: -70px;visibility: hidden;" src="imgs/icon-10.svg">
-				</div>
-
-				<div>
-					<span>R$ 83,90</span>
-					<span style="font-size: 20px; margin-top: 10px;">/mês</span>
-				</div>
-
-				<a href="#"><button>Assine Já</button></a>
-
-			</div>  
-				<!-- ==========================4º======================--> 
-
-
-			<div class="main-plano-1">
-
-			
-				<div>
-
-					<span class="main-plano-tt">Ofertas</span>
-					<span class="main-plano-tx-1">200 Mega</span>
-
-					<div style="visibility: hidden;" class="main-plano-tx-2">
-
-						<img style="width: 22px; height: auto;" class="main-plano-img" src="imgs/icon-1.svg">
-						<span style="font-size:18px; text-decoration: line-through; margin: 0 7px 5px 0;">200 Mega</span>
-						<span style="color: #4caf50; font-size: 18px; font-weight: bolder;">500 Mega</span>
-
-					</div>
-				</div>	
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-2.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Instalação Inclusa</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-3.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">100% fibra óptica</span>
-				</div>
-				
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-4.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Wi-fi de alta performance</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-5.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Download 200 Mbps</span>
-				</div>
-
-				<div>
-					<img style="position: relative; bottom: 20px;" src="imgs/icon-6.svg">
-					<span style="margin-top: 5px; position: relative; bottom: 20px;">Upload 100 Mbps</span>
-				</div>
-
-				<div>
-					<img style="width:auto; height: 15px; visibility: hidden;" src="imgs/icon-7.svg">
-					<span style="visibility: hidden;">Até 4 dispositivos via cabo</span>
-				</div>
-
-				<div>
-					<span style="margin: 10px 0 10px 40px;">Apps inclusos</span>
-				</div>
-
-				<div>
-					<img style="width:45px; height: auto; position: relative; left: 0px;" src="imgs/icon-8.webp">
-					<img style="width:45px; height: auto; position: relative; left: -35px;" src="imgs/icon-9.webp">
-					<img style="width:45px; height: auto; position: relative; left: -70px;" src="imgs/icon-10.svg">
-				</div>
-
-				<div>
-					<span>R$ 92,90</span>
-					<span style="font-size: 20px; margin-top: 10px;">/mês</span>
-				</div>
-
-				<a href="#"><button>Assine Já</button></a>
-
-			</div>  	
-
-		</div>
-
-
+	
 		<div id="container2" class="container-tv-plan">
 			
 			<div style="height: 490px;" class="plano-tv">
@@ -718,7 +243,7 @@ popup-fim-->
 						<span style="font-size:20px; font-weight: bolder;">/mês</span>
 					</div>
 
-					<a href="#" target="_blank"><button>ASSINE JÁ</button></a>
+					<a href="autenvio/form.php" target="_blank"><button>ASSINE JÁ</button></a>
 			</div>
 
 
@@ -758,7 +283,7 @@ popup-fim-->
 						<span style="font-size:20px; font-weight: bolder;">/mês</span>
 					</div>
 
-					<a href="#" target="_blank"><button>ASSINE JÁ</button></a>
+					<a href="autenvio/form.php" target="_blank"><button>ASSINE JÁ</button></a>
 			</div>
 
 			<!--================================plano familia tv ======================-->
@@ -793,7 +318,7 @@ popup-fim-->
 						<span style="font-size:20px; font-weight: bolder;">/mês</span>
 					</div>
 
-					<a href="#" target="_blank"><button>ASSINE JÁ</button></a>
+					<a href="autenvio/form.php" target="_blank"><button>ASSINE JÁ</button></a>
 			</div> 			
 
 		</div>
@@ -1120,12 +645,9 @@ popup-fim-->
 			
 
 <script type="text/javascript" src="overlay.js"></script>
-<script type="text/javascript" src="modal.js"></script>
-<script type="text/javascript" src="share.js"></script>
 <script src="https://kit.fontawesome.com/6b5359d6c2.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="toggle.js"></script>
-<script type="text/javascript" src="dropdown.js"></script>
-<script type="text/javascript" src="slide.js"></script>
+<script type="text/javascript" src="dropdown.js"></script> 
 <script type="text/javascript" src="filter.js"></script>
 </body> 
 </html>			

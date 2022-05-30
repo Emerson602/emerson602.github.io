@@ -240,13 +240,10 @@
 
 
 	.img-logo {
-
-		 		
+	 		
 		
 		width: 150px;
-		height: auto; 
-		 
-
+		height: auto;  
 }
 } 
 
@@ -482,7 +479,7 @@
 
 .hamburger_menu{
 
-    width: auto;
+    width: 50px;
     height: auto;     
     border-radius: 3px;
     text-align: center;
@@ -493,10 +490,30 @@
     transition: all 0.2s ease;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
+    position: absolute;
+    right: -5vw; 
+}
 
+@media(max-width: 300px){
+
+.hamburger_menu{
+
+	position: absolute;
+    right: -7vw; 	
+}
 
 }
+
+
+.menu {
+
+	width: 50px;
+	height: auto;
+}
+
+
+
 
 .hamburger_menu:hover{     
     
@@ -516,9 +533,9 @@
 
     width: 215px;
     position: relative;
-    left: -60px;
+    left: -175px;
     display: none;
-    top: 20px; 
+    top: 70px; 
 }
 
 .wrap {
@@ -605,7 +622,7 @@
 
         position: absolute;
         top: 70px;
-        left: -14%;
+        left: -5%;
         width: 100%;
         display: none;
         z-index: 1;     
@@ -728,6 +745,101 @@
 		width: 100%;
 	}
 }
+
+
+
+.imgs-ld {
+
+	width: 100%;
+	height: 60px;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	bottom: 35px;
+}
+
+
+.imgs-ld img:nth-child(1) {
+
+	width: 50px;
+	height: auto;
+	border-radius: 8px;
+	margin: 0;
+	position: relative;
+	right: 20px;
+	animation: img-ld 12s ease infinite;	
+	animation-delay: 0s;	
+	background-color: #fff;
+	padding: 12px; 
+		
+}
+
+
+.imgs-ld img:nth-child(2) {
+	
+	width: 40px;
+	height: auto;
+	border-radius: 8px;
+	margin: 0;
+	animation: img-ld 12s ease infinite;	
+	animation-delay: 4s;
+	background-color: #fff;
+	padding: 12px; 	 	
+}
+
+
+
+
+.imgs-ld img:nth-child(3) {
+	
+	width: 40px;
+	height: auto;
+	border-radius: 8px;
+	margin: 0;
+	position: relative;
+	left: 20px;
+	animation: img-ld 12s ease infinite;	
+	animation-delay: 8s;
+	background-color: #fff;
+	padding: 12px; 	 
+}
+
+@keyframes img-ld {
+
+	0% {
+		
+		width: 40px;
+		height: auto;
+	}
+
+
+	5% {
+		
+		width: 50px;
+		height: auto;
+	}
+
+	30%{
+
+		width: 50px;
+		height: auto;
+	}
+
+	35%{
+
+		width: 40px;
+		height: auto;
+	}
+
+	100%{
+
+		width: 40px;
+		height: auto;
+	}
+}
+
 
 /*main*/
 
@@ -899,6 +1011,89 @@
 	background-color: #F4F5FA; 
 
 }
+
+
+/*sobre-inicio*/
+
+.container-sobre {
+
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+.sub-sobre {
+
+	width: 100%;
+	height: 300px;
+	background-image: url(https://www.focus.jor.br/wp-content/uploads/2020/06/BRISANET.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.gradient{
+
+	width: 100%;
+	height: 300px;
+	background: linear-gradient(to right, rgba(8,61,147, 0.95), rgba(8,61,147, 0.333)), linear-gradient(to bottom, rgba(8,61,147, 0.333), rgba(8,61,147, 0));
+	color: #fff;	
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+@media(max-width: 1000px) {
+
+	.gradient{
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+}
+
+
+.tt-somos {
+
+	margin: 0 0 30px 200px;
+	font-weight: bolder; 
+	font-size: 45px;
+}
+
+
+@media(max-width: 1000px) {
+
+	.tt-somos {
+
+	margin: 0 0 30px 0;
+	font-weight: bolder; 
+	font-size: 2rem;
+}
+}
+
+article{
+
+	width: 60vw;
+	margin: 100px 0 150px 0;
+	letter-spacing: 2.5px;
+	line-height: 35px;
+}
+
+
+@media(max-width: 1000px){
+
+	article{
+
+		width: 80vw;
+	}
+}
+
+/*sobre-fim*/
 
 .main-1 {
 
