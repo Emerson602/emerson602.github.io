@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="calculando.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="equacao">
+
+
+      <label>Equação do segundo grau</label>
+
+      <div class="formula">
+
+        <span id="a">ax²-</span>
+        
+        <span id="b">bx+</span>
+        
+        <span id="c">c=0</span>
+       
+      </div>
+
+      <p>Digite os coeficientes:</p>
+     <div class="container-coeficientes">  
+
+
+        <input id="primeiraRaiz" type="number" placeholder="a" oninput="myMirror1()">
+        <input id ="segundaRaiz" type="number" placeholder="b" oninput="myMirror2()">
+        <input id="terceiraRaiz" type="number" placeholder="c" oninput="myMirror3()">
+     </div>
+      <button id="myBtn">Calcular</button>
+
+      <p id="resposta"></p>
+
+    <div class="container-raizes">   
+      <p id="raiz_1"></p>
+      <p id="raiz_2"></p>
+    </div> 
+
+    </div> 
+
+  </div>
+   
+<script src="script.js"></script>
+</body>
+</html>
