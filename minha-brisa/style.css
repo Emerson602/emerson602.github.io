@@ -136,7 +136,7 @@
 
 	height: auto;
 	width: 100%;
-	background-color: #F4F5FA; 
+	background-color: #fff; 
 }
 
 
@@ -281,7 +281,7 @@
   
   list-style: none;
   color: #083D93; 
-  background-color: #F4F5FA;
+  background-color: #fff;
   font-size: 1rem;     
   font-weight: bolder;
   letter-spacing: 3px;
@@ -314,9 +314,10 @@
 
 .nav-desktop div {
 
-	background-color:rgba(8, 61, 147, 0.9); 
+	background-color:#F4F5FA; 
 	font-size: 12px;
-	border: solid 1px #fff;
+	border: solid 1px #F56E28;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
 	 
 }
 
@@ -324,20 +325,21 @@
 
 	color: #fff;
 	font-weight: bolder;
-	border-radius: 4px;	
+	border-radius: 0px;	
 	text-align: center;
-	background-color: #F56E28;
+	background-color: #083D93;
+	padding: 4px 6px;
+	font-size: 0.8rem;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
 
 }
 
 .dropdown-menu a:hover {
 
-	background-color: #083D93;
-	border: solid 1px #fff;
-	color: #fff;
-	padding: 2px 4px;
-	border-radius: 4px;
-
+	background-color: #F56E28;
+	border: solid 1px #F56E28;
+	color: #fff; 
+	transition: 1s; 	
 }
 
 .nav-desktop li:hover {
