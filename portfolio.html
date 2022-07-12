@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Wemerson Nicacio - Home</title>
+	<title>Wemerson Nicacio - Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="style.css"> 
 	<link rel="icon" type="image/png" sizes="16x16"  href="pics/favicon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
@@ -118,13 +118,60 @@
 		</div>
 
 		<div id="content" class="content"> 			
+			<!--===========================conteudo============================-->
 
-				<div class="t-writer">  					
-					<h2 id="word"></h2><p class="blink">|</p>  
-				</div> 
 
-				<a class="hire-me-button" href="https://api.whatsapp.com/send?phone=5582993975054" target="_blank"><button id="hire">Hire me</button></a>
+		<div class="gallery">
 
+		  <div class="gallery__prev"></div>
+		  <div class="gallery__next"></div>
+
+		  <div class="gallery__stream">
+		    <div class="gallery__item bg-1"></div>
+		    <div class="gallery__item bg-2"></div>
+		    <div class="gallery__item bg-3">
+
+		    	<div class="container-gallery-btn">
+		    		
+		    		<h3>www.firebase.com.br</h3>
+		    		<a href="#" target="_blank"><button id="btn-galery">Live preview</button></a>
+
+		    	</div>
+
+		    </div>
+		    <div class="gallery__item bg-4"></div>
+		    <div class="gallery__item bg-5"></div>
+		    <div class="gallery__item bg-6"></div>
+		    <div class="gallery__item bg-7"></div>
+		  </div>
+
+		</div>	
+
+		<script type="text/javascript">
+			
+			document.addEventListener('DOMContentLoaded', function() {
+			  let stream = document.querySelector('.gallery__stream');
+			  let items = document.querySelectorAll('.gallery__item');
+			  
+			  let prev = document.querySelector('.gallery__prev');
+			  prev.addEventListener('click', function() {
+			    stream.insertBefore(items[items.length - 1], items[0]);
+			    items = document.querySelectorAll('.gallery__item');
+			  });
+			  
+			  let next = document.querySelector('.gallery__next');
+			  next.addEventListener('click', function() {
+			    stream.appendChild(items[0]);
+			    items = document.querySelectorAll('.gallery__item');
+			  });
+			});
+
+
+		</script>
+
+
+				
+			<!--===============================================================-->	
 				<div class="media-social">
 					<a href="https://github.com/Emerson602" target="_blank">
 						<i class="fa-brands fa-github"></i>
