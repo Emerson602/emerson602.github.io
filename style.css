@@ -672,12 +672,11 @@ i{
 	.media-social{
 
 	display: block;	
-	position: fixed;
-	bottom: 45px;
+	position: absolute;
+	top: 90vh;
 
 }
 }
-
 
 
 .right1{
@@ -689,10 +688,9 @@ i{
 
 	.right1{
 
-	display: block;	
-	position: fixed;
-	bottom: 13px;
-	font-size: 0.8rem;
+	display: block;		
+	position: absolute;
+	top: 94vh; 
 }
 }
 
@@ -1051,7 +1049,6 @@ i{
 	box-shadow: 0 4px 8px 0 rgb(94 133 233 / 80%);
 	opacity: 1;
 }
-
 
 
 /*galeria fim*/
