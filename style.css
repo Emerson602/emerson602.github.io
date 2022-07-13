@@ -19,7 +19,8 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(1, 37, 128, 0.9);
+    background-color: rgba(1, 37, 128, 0.6);
+    backdrop-filter: blur(5px);
     z-index: 999;
     display: flex;
     align-items: center;
@@ -181,7 +182,7 @@
 
 
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
 	.head{
 		display: none;
@@ -245,7 +246,7 @@
 	display: none;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
 	.head-mobile{
 
@@ -278,7 +279,7 @@
 	left: 70px;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
 	.head-mobile div:nth-child(2){
 	color: #fff;
@@ -451,7 +452,7 @@
 	
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
 	.container-translate{
 
@@ -478,7 +479,7 @@
 	border-radius: 4px;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
 	.container-translate img{
 
@@ -568,7 +569,7 @@ i{
 	background-color: #141414;
 	width: 100%;
 	height: 100vh;
-	background-image: url(pics/background.gif);
+	background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik8AYBjhsYtkDG8qsSshg-wGX2eF9rsvkSjfkCpp4uWEaSyFVi97QkzCUrgYNqMLY-1j5ZJFMQ26FTjWr7f3QTyHu6yQmUHcrTZbWqsOGcZrztquFxB-p7tzdfFpBCGVjEKlMQNTzjMWsbOOigGAlhjFhJzmo7GdQ9XeE8vbJ-GXgFrxf7jr8pdYbA/s1600/background.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -656,6 +657,11 @@ i{
 }  
 }
 
+
+
+
+
+
 .media-social{
 
 	display: none;
@@ -668,17 +674,20 @@ i{
 	display: block;	
 	position: fixed;
 	bottom: 45px;
+
 }
 }
 
-.content span{
+
+
+.right1{
 
 	display: none;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
 
-	.content span{
+	.right1{
 
 	display: block;	
 	position: fixed;
@@ -686,6 +695,67 @@ i{
 	font-size: 0.8rem;
 }
 }
+
+.rdp-portfolio-mobile{
+
+	display: flex;
+}
+
+@media(max-width: 1024px){
+
+	.rdp-portfolio-mobile{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 90px;  	
+}
+}
+
+@media(max-width: 500px){
+
+	.rdp-portfolio-mobile{
+	 
+	position: relative;
+	top: 100px; 
+}
+}
+
+
+.media-social-portfolio{
+
+	display: none;	
+}
+
+@media(max-width: 300px){
+
+	.media-social-portfolio{
+	
+	display: block;	
+	 
+}
+}
+
+.right2{  
+
+	display: none;  
+}
+
+
+@media(max-width: 1024px){
+
+	.right2{  
+	
+	display: block;	 
+	font-size: 0.8rem; 	
+	margin: 10px 0;	 
+}
+}
+
 
 
 .blink {
@@ -726,25 +796,39 @@ i{
 /* Gallery */
 
 .gallery {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 45%;
   right: 0;
   transform: translateY(-50%);
   width: 70vw;
   height: 90%;
-  max-height: 70vh;
+  max-height: 80vh;
   overflow: hidden;
-  backdrop-filter: blur(15px);
-  box-shadow: 10px 0 15px rgb(0 0 0 / 60%);  
+  background-color: transparent; 
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
+
+	.gallery{
+
+		width: 100%;
+	  height: 90%;
+	  max-height: 70vh;
+	  position: relative;
+  	top: 40%; 
+
+	}
+}
+
+@media(max-width: 500px){
 
 	.gallery{
 
 		width: 100%;
 	  height: 90%;
 	  max-height: 60vh;
+	  position: relative;
+  	top: 35%;
 	}
 }
 
@@ -757,16 +841,17 @@ i{
   width: 20%;
   height: 100%;
   z-index: 3;
+
 }
 
 .gallery:before {
   left: 0;
-  background:  linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  background-color: transparent;
 }
 
 .gallery:after {
   right: 0;
-  background:  linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  background-color: transparent;
 }
 
 .gallery__stream {
@@ -786,6 +871,7 @@ i{
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 5px; 
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 60%); 
 }
 
 
@@ -826,10 +912,11 @@ i{
   position: absolute;
   top: 50%;
   z-index: 4;
-  width: 50%;
+  width: 100%;
   height: 100%;
   transform: translateX(-50%) translateY(-50%) scale(.8);
   cursor: pointer;
+  background-color: transparent;
 }
 
 .gallery__prev {
@@ -838,6 +925,13 @@ i{
 
 .gallery__next {
   left: 100%;
+}
+
+.gallery__prev,
+.gallery__next:hover{
+
+	cursor: pointer; 
+	background-color: transparent;
 }
 
 /* Backgrounds */
@@ -926,9 +1020,8 @@ i{
 	justify-content: center;
 	flex-direction: column;	
 	color: #fff;
-	backdrop-filter: blur(15px);
-  box-shadow: 10px 0 15px rgb(0 0 0 / 60%); 
-  background-color: rgba(0,0,0,0.7); 
+	backdrop-filter: blur(3px); 
+  background-color: rgba(1, 37, 128,0.4); 
   padding: 20px 0;
   width: 100%;
   
@@ -958,8 +1051,8 @@ i{
 	box-shadow: 0 4px 8px 0 rgb(94 133 233 / 80%);
 	opacity: 1;
 }
+
+
+
 /*galeria fim*/
-
-
-
 
