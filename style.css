@@ -341,7 +341,7 @@
 	background-image: linear-gradient(to bottom right,#141414, #0e3188, #012580); 	
 	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 80%);
 	right: 10%;
-	top: 48px;
+	top: 70px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -352,6 +352,7 @@
 	opacity: 0;
 	animation-fill-mode: forwards;
 	color: #fff;
+	z-index: 2;
 }
 
 
@@ -364,7 +365,7 @@
 	height: 0;
 	position: absolute; 	
 	left: 0;
-	top: 48px; 
+	top: 70px; 
 	}
 }
 
@@ -448,7 +449,7 @@
 	font-size: 0.7rem;
 	font-weight: bolder;
 	letter-spacing: 1px;
-	z-index: 1;
+	z-index: 3;
 	
 }
 
