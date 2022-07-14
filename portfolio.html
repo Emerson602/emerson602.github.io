@@ -197,7 +197,7 @@
 		    	<div class="container-gallery-btn">
 		    		
 		    		<h3>www.firebase.com.br</h3>
-		    		<a href="#" target="_blank"><button id="btn-galery">Live preview</button></a>
+		    		<a href="#" target="_blank"><button id="btn-gallery">Live preview</button></a>
 
 		    	</div>
 
@@ -206,50 +206,26 @@
 		  </div>
 
 		</div>	
-
-		<script type="text/javascript">
-			
-			document.addEventListener('DOMContentLoaded', function() {
-			  let stream = document.querySelector('.gallery__stream');
-			  let items = document.querySelectorAll('.gallery__item');
-			  
-			  let prev = document.querySelector('.gallery__prev');
-			  prev.addEventListener('click', function() {
-			    stream.insertBefore(items[items.length - 1], items[0]);
-			    items = document.querySelectorAll('.gallery__item');
-			  });
-			  
-			  let next = document.querySelector('.gallery__next');
-			  next.addEventListener('click', function() {
-			    stream.appendChild(items[0]);
-			    items = document.querySelectorAll('.gallery__item');
-			  });
-			});
-
-
-		</script>
-
-
-				
-			<!--===============================================================-->
-			<div class="rdp-portfolio-mobile">	
-					<div class="media-social-portfolio">
-						<a href="https://github.com/Emerson602" target="_blank">
-							<i class="fa-brands fa-github"></i>
-						</a>
-
-						<a href="https://www.instagram.com/wnadeveloper/?hl=pt-br" target="_blank">
-							<i class="fa-brands fa-instagram"></i>
-						</a>
-
-						<a href="https://api.whatsapp.com/send?phone=5582993975054" target="_blank">
-							<i class="fa-brands fa-whatsapp"></i>
-						</a> 
-						
-					</div>
 					
-					<span class="right2" id="right2">© All right reserved.</span>	
-			   </div>
+			
+		<div class="rdp-portfolio-mobile">	
+				<div class="media-social-portfolio">
+					<a href="https://github.com/Emerson602" target="_blank">
+						<i class="fa-brands fa-github"></i>
+					</a>
+
+					<a href="https://www.instagram.com/wnadeveloper/?hl=pt-br" target="_blank">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+
+					<a href="https://api.whatsapp.com/send?phone=5582993975054" target="_blank">
+						<i class="fa-brands fa-whatsapp"></i>
+					</a> 
+					
+				</div>
+				
+				<span class="right2" id="right2">© All right reserved.</span>	
+		   </div>
 	
 			   	
 		</div>
@@ -261,6 +237,7 @@
 
 
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="gallery.js"></script>
 <script type="text/javascript" src="classtoggle.js"></script>
 <script type="text/javascript" src="preloader.js"></script> 
 <script src="https://kit.fontawesome.com/781862dd02.js" crossorigin="anonymous"></script>	

@@ -200,8 +200,7 @@
 	position: relative;
 	top: 125px;
 	left: 50%;
-	transform: translate(-50%, -50%);
-	cursor: pointer;
+	transform: translate(-50%, -50%);	
 	pointer-events: none;
 }
 
@@ -449,6 +448,7 @@
 	font-size: 0.7rem;
 	font-weight: bolder;
 	letter-spacing: 1px;
+	z-index: 1;
 	
 }
 
@@ -1052,4 +1052,140 @@ i{
 
 
 /*galeria fim*/
+
+.container-about {
+	
+	width: 70vw;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	backdrop-filter: blur(15px);
+	z-index: 0; 
+ 
+}
+
+.container-about img{
+
+		display: none;  
+}
+
+
+@media(max-width: 1024px){
+
+	.container-about img{
+
+		display: block;
+		border-radius: 50%;
+    width: 170px;
+    height: auto;
+    border: solid 8px #5e85e9; 
+    margin-top: 30px; 
+}
+}
+
+
+@media(max-width: 700px){
+
+	.container-about img{
+
+    width: 140px;
+    height: auto;
+    border: solid 5px #5e85e9; 
+    margin-top: 30px; 
+}
+}
+
+@media(max-width: 300px){
+
+	.container-about img{
+
+    width: 100px;
+    height: auto;        
+}
+}
+
+.container-about h2{
+	
+    margin-top: 30px;
+		font-size: 1.6rem;
+		line-height: 25px;
+		letter-spacing: 3.5px;
+}
+
+@media(max-width: 700px){
+
+	.container-about h2{
+	
+		margin-top: 30px;
+		font-size: 1.2rem;
+		line-height: 25px;
+		letter-spacing: 3px;
+}
+}
+
+@media(max-width: 300px){
+
+	.container-about h2{
+	
+		margin-top: 15px; 	
+}
+}
+
+
+
+.container-about p{
+
+		width: 60vw;
+		text-align: left;
+		text-indent: 30px;
+		line-height: 30px;
+		letter-spacing: 3.5px;		
+		font-size: 1.2rem;
+		margin-top: 30px;
+}
+
+
+
+@media(max-width: 1024px){
+
+	.container-about p{
+
+		width: 90vw;	
+		font-size: 1rem; 
+
+}
+}
+
+
+@media(max-width: 700px){
+
+	.container-about p{
+
+		width: 95vw;	
+		font-size: 0.8rem;
+		text-indent: 30px;
+		line-height: 25px;
+		letter-spacing: 3px;	
+
+}
+}
+
+
+@media(max-width: 300px){
+
+	.container-about p{
+
+		width: 95vw;	
+		font-size: 0.8rem;
+		text-indent: 30px;
+		line-height: 25px;
+		letter-spacing: 3px; 
+		margin-top: 15px;
+}
+}
+
+
 
