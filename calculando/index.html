@@ -9,39 +9,186 @@
 <body>
 
   <div class="container">
-    <div class="equacao">
+            <div style="display: none;" class="equacao">
 
 
-      <label>Equação do segundo grau</label>
+                    <label>Calculadora de equação do 2º grau</label>
 
-      <div class="formula">
+                    <div class="formula">
 
-        <span id="a">ax²-</span>
-        
-        <span id="b">bx+</span>
-        
-        <span id="c">c=0</span>
-       
-      </div>
+                      <span id="a">ax²-</span>
+                      
+                      <span id="b">bx+</span>
+                      
+                      <span id="c">c=0</span>
+                     
+                    </div>
 
-      <p>Digite os coeficientes:</p>
-     <div class="container-coeficientes">  
+                    <p>Digite os coeficientes:</p>
+                   <div class="container-coeficientes">  
 
 
-        <input id="primeiraRaiz" type="number" placeholder="a" oninput="myMirror1()">
-        <input id ="segundaRaiz" type="number" placeholder="b" oninput="myMirror2()">
-        <input id="terceiraRaiz" type="number" placeholder="c" oninput="myMirror3()">
-     </div>
-      <button id="myBtn">Calcular</button>
+                      <input id="primeiraRaiz" type="number" placeholder="a" oninput="myMirror1()">
+                      <input id ="segundaRaiz" type="number" placeholder="b" oninput="myMirror2()">
+                      <input id="terceiraRaiz" type="number" placeholder="c" oninput="myMirror3()">
+                   </div>
+                    <button id="myBtn">Calcular</button>
 
-      <p id="resposta"></p>
+                    <p id="resposta"></p>
 
-    <div class="container-raizes">   
-      <p id="raiz_1"></p>
-      <p id="raiz_2"></p>
-    </div> 
+                  <div class="container-raizes">   
+                    <p id="raiz_1"></p>
+                    <p id="raiz_2"></p>
+                  </div> 
 
-    </div> 
+            </div>  
+
+            <div style="display: none;" class="volume">
+                
+                <div class="cubo"> 
+
+                  <label>Cubo</label>
+
+                    <div class="formula-cubo">
+
+                      <span>V=</span>
+
+                      <span>a.</span>
+                      
+                      <span>b.</span>
+                      
+                      <span>c</span>
+                     
+                    </div>
+                    
+                  <input id="ladoA" type="number" placeholder="lado a">
+                  <input id ="ladoB" type="number" placeholder="lado b">
+                  <input id="ladoC" type="number" placeholder="lado c"><br> 
+
+                    <button id="myBtnCubo">Calcular</button>  
+                    <p id="volumeCubo"></p>
+
+                </div>
+
+                <div class="prisma"> 
+                  
+                </div>
+
+                <div class="cilindro"> 
+                  
+                </div>
+
+                <div class="cone"> 
+                  
+                </div>
+
+                <div class="piramide"> 
+                  
+                </div>
+
+                <div class="esfera"> 
+                  
+                </div>
+
+            </div> 
+
+             <div class="escadas">
+                <div class="container-espelho">
+                  <span>Espelho</span>
+
+                  <input class="altura" id="altura" type="number" placeholder="h">                    
+                   
+                  <button class="button-escadas" id="botaoEscada">Calcular</button>
+
+                  <p id="16cm"></p>  
+                  <p id="17cm"></p>
+                  <p id="18cm"></p>
+
+                   <span>Calcular Piso</span>
+
+                 
+                    <input class="espelho" id="espelho" type="number" placeholder="espelho">
+                    <button class="button-espelho" id="botaoEspelho">Calcular</button>
+
+                      <p id="resposta-espelho1"></p>
+                      <p id="resposta-espelho2"></p>
+                      <p id="resposta-espelho3"></p>
+                      <p id="resposta-espelho4"></p>
+                      <p id="resposta-espelho5"></p>  
+
+                      <p id="resposta-espelho6"></p>
+                      <p id="resposta-espelho7"></p>
+                      <p id="resposta-espelho8"></p>
+                      
+
+                </div> 
+
+                <script type="text/javascript">
+                  
+
+
+                let h = document.getElementById('altura');                
+                let re16 = document.getElementById('16cm'); 
+                let re17 = document.getElementById('17cm'); 
+                let re18 = document.getElementById('18cm');  
+
+
+                const btnEscada = document.getElementById("botaoEscada");
+                btnEscada.addEventListener("click", myEscada); 
+
+                function myEscada(){
+
+
+                  re16.innerHTML = "16cm * h =" + parseFloat(h.value) / 16 + "cm";
+                  re17.innerHTML = "17cm * h =" + parseFloat(h.value) / 17 + "cm";
+                  re18.innerHTML = "18cm * h =" + parseFloat(h.value) / 18 + "cm";               
+                }    
+
+
+
+                const btnEspelho = document.getElementById("botaoEspelho");
+                btnEspelho.addEventListener("click", myEspelho); 
+
+                
+
+                function myEspelho(){
+
+                  let e = document.getElementById('espelho');
+                  let resEspelho1 = document.getElementById('resposta-espelho1');
+                  let resEspelho2 = document.getElementById('resposta-espelho2');
+                  let resEspelho3 = document.getElementById('resposta-espelho3');
+                  let resEspelho4 = document.getElementById('resposta-espelho4');
+                  let resEspelho5 = document.getElementById('resposta-espelho5');
+                  let resEspelho6 = document.getElementById('resposta-espelho6');
+                  let resEspelho7 = document.getElementById('resposta-espelho7');
+                
+
+                 
+                  if(parseInt(e.value) >= 16 && parseInt(e.value) <= 18){
+
+                     resEspelho1.innerHTML = "2x E + P = 64" + "<br>"
+                  resEspelho2.innerHTML = "2x" + parseInt(e.value) + "+ P = 64"
+                  resEspelho3.innerHTML = parseInt(e.value) * parseInt(2) + "+ P = 64"
+                  resEspelho4.innerHTML = "P = 64 -" + (parseInt(e.value) * parseInt(2)) + "=" + (parseInt(64) - parseInt(e.value) * parseInt(2)) + "cm"  
+                  resEspelho5.innerHTML = "Piso =" + (parseInt(64) - parseInt(e.value) * parseInt(2)) + "cm"
+                  resEspelho6.innerHTML = "Degraus =" + parseInt(e.value);
+
+                  resEspelho7.innerHTML = "Espelho =" + parseInt(e.value) + "cm" ;
+                  
+
+
+                  }
+                  else{
+                    alert('O valor do espelho precisa está entre 16cm e 18cm');
+                  }
+                             
+                }    
+          
+                 </script>
+
+                    
+
+            </div>  
 
   </div>
    

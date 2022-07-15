@@ -69,7 +69,22 @@ function myMirror3() {
   } 
 }
 
+/*=============================================================*/
 
 
-  
-  
+
+
+
+var la = document.getElementById('ladoA');
+var lb = document.getElementById('ladoB');
+var lc = document.getElementById('ladoC'); 
+
+const botaoCubo = document.getElementById("myBtnCubo");
+botaoCubo.addEventListener("click", myVolCubo);   
+
+function myVolCubo(){
+  let vc = document.getElementById('volumeCubo');  
+  let volCubo = parseFloat(la.value) * parseFloat(lb.value) * parseFloat(lc.value);   
+  vc.innerHTML = "Volume: " + parseFloat(volCubo) + "cm³.";    
+}
+
