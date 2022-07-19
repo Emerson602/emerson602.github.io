@@ -1274,6 +1274,7 @@ i{
 		height: 700px;	
 		grid-template-columns: auto auto auto; 	
 		padding: 15px 5px;	
+		overflow-y: hidden;
 	}
 }
 
@@ -1335,7 +1336,7 @@ i{
 
 	.skills-grid img{
 
-		width: 120px;
+		width: 100px;
 		height: auto;
 		margin: 40px 2px 10px 2px;
 		padding: 0;
@@ -1346,7 +1347,7 @@ i{
 
 	.skills-grid img{
 
-		width: 90px;
+		width: 80px;
 		height: auto;
 		margin: 15px 2px 10px 2px;
 		padding: 0;
