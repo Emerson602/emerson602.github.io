@@ -157,7 +157,11 @@ function transL2(){
 					    rd.innerHTML = "© All right reserved.";
 					    rm.innerHTML = "© All right reserved.";
 					    tts.innerHTML = "Know Me More"; 
-					    tx.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."; 		 						
+					    tx.innerHTML = "Hi, I'm Wemerson, i'm a Front-end Web developer.<br>I have experience in:<br>HTML5, CSS3, JavaScript, Bootstrap.<br>I always try to get the best result in my work and offer the best experience to my clients."; 
+
+					    
+
+		 						
 					   
 					    			    	
 					  					
@@ -177,7 +181,7 @@ function transL2(){
 					    rd.innerHTML = "© Todos os direitos reservados.";
 					    rm.innerHTML = "© Todos os direitos reservados.";
 					    tts.innerHTML = "Quem sou"; 
-					    tx.innerHTML = "texto em construção!"; 		 												
+					    tx.innerHTML = "Olá, sou Wemerson, sou desenvolvedor Web Front-end.<br>Tenho experiência em:<br>HTML5, CSS3, JavaScript, Bootstrap.<br>Procuro sempre obter o melhor resultado em meus trabalhos oferecendo a melhor experiência aos meus clientes."; 		 												
 					   
 
 					  } 
