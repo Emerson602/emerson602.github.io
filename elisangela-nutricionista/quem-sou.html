@@ -4,10 +4,31 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon-1.ico">
     <title>Quem sou - Elisangela Albuquerque</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="quem-sou.css">
 
 </head>
 <body onLoad="slide1 ()">
+
+    <!--preloader-inicio-->
+    
+    
+    <div class="overlay-2">        
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        const overlay = document.querySelector(".overlay-2");
+
+        // Quando a página for totalmente carregada, o overlay será desabilitado e a página
+        // irá aparecer.
+
+        window.addEventListener("load", function () {
+            overlay.style.display = "none";
+        })
+    </script>
+
+<!--preloader-final-->  
 
 <!--top-->
 <div class="social-midia-container"> 

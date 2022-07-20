@@ -6,9 +6,31 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="wickedcss.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body onLoad="slide1 ()">
+<body onLoad="slide1 ()"> 
+
+
+ <!--preloader-inicio-->
+    
+    
+    <div class="overlay-2">        
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        const overlay = document.querySelector(".overlay-2");
+
+        // Quando a página for totalmente carregada, o overlay será desabilitado e a página
+        // irá aparecer.
+
+        window.addEventListener("load", function () {
+            overlay.style.display = "none";
+        })
+    </script>
+
+<!--preloader-final-->     
 
 <!--top-->
 <div class="social-midia-container"> 
