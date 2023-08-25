@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cat virtual</title>
+  <link rel="stylesheet" href="./css/style.css">  
+</head>
+<body onload="indexStatus(); updadeImages(); updateAllBars(); disableAndEnabledActionButtons(); growth()"> 
+
+<div id="content">
+
+    <audio id="audio" controls loop autoplay>
+      <source src="./sounds/sound-1.mp3" type="audio/mpeg">      
+    </audio> 
+
+    <audio id="audio-click" controls autoplay>
+      <source src="./sounds/sound-click.mp3" type="audio/mpeg">      
+    </audio> 
+
+    <header>
+
+      <div>
+        <span class="nameBar"></span>
+        <span class="ageBar"></span>
+      </div>
+
+    </header> 
+
+    <div class="controls">
+
+      <button class="btn-status"><img id="controls-buttons-icons" src="./imgs/chart-bar-solid.svg"></button>
+      <button class="btn-actions"><img id="controls-buttons-icons" src="./imgs/gamepad-solid.svg"></button>  
+        
+    </div> 
+
+    <div class="sound-control-container">
+
+      <button id="btn-activate-audio" class="button"><img id="icon-btn-activate-audio" src="./imgs/volume-xmark-solid.svg"></button> 
+
+      <button id="btn-up-vol">+</button>
+      <button id="btn-down-vol">-</button> 
+         
+          
+    </div> 
+
+    <div class="main">
+
+      <img id="img-cat" src="">
+
+        <div class='container-status-hidden' id="container-status">   
+          
+          <span  class="healthText"></span>
+          <div class="healthBar"></div>
+
+          <span class="happyText"></span>
+          <div class="happyBar"></div>
+
+          <span class="alimentationText"></span>
+          <div class="alimentationBar"></div>
+
+          <span class="hydrationText"></span>
+          <div class="hydrationBar"></div>
+
+          <span class="vitalityText"></span>
+          <div class="vitalityBar"></div>
+
+          <span class="cleaningText"></span>
+          <div class="cleaningBar"></div>
+          
+          <span class="bathroomText"></span>
+          <div class="bathroomBar"></div>     
+          
+        </div>
+
+        <div class='container-actions-hidden' id="container-actions"></div>   
+               
+
+     </div>
+    
+</div>  
+
+
+<script type="text/javascript" src="./js/index.js" defer=""></script>
+<script type="text/javascript" src="./js/growth.js" defer=""></script>
+<script type="text/javascript" src="./js/animations.js" defer=""></script>
+<script type="text/javascript" src="./js/status.js" defer=""></script>
+<script type="text/javascript" src="./js/actions.js" defer=""></script>
+<script type="text/javascript" src="./js/sounds.js" defer=""></script>
+<script type="text/javascript" src="./js/notifications.js" defer=""></script>
+<script type="text/javascript" src="./js/store-date.js" defer=""></script>
+
+</body>
+</html>

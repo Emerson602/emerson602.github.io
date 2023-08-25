@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+      <div class="equation">
+
+        <img class="baskara-img" src="./img/baskara.webp">
+
+        <label>Calcular equação do 2º grau</label>                   
+
+        <span id="formula">ax²- bx + c = 0</span>                             
+
+        <form onsubmit="return false;">
+
+          <p>Digite os coeficientes:</p>
+
+          <div class="container-coefficients"> 
+
+            <input id="quadraticTermA" type="number" placeholder="a" oninput="reflect()">
+            <input id ="quadraticTermB" type="number" placeholder="b" oninput="reflect()">
+            <input id="quadraticTermC" type="number" placeholder="c" oninput="reflect()">
+
+          </div>  
+
+        </form>
+
+        <p id="response"></p>
+          
+        <button id="myBtn">Calcular</button>        
+
+      </div>                 
+
+  </div>
+   
+<script src="script.js"></script>
+</body>
+</html>
