@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Pokedex</title>
+</head>
+<body>
+  <div class="container" id="app">
+    <h1>Pokedex</h1>
+    <ul data-js="pokemons-list" class="pokedex">
+      <li v-for="pokemon in pokemons" :key="pokemon.id" :class="['card', pokemon.type[0]]" :style="{'--type-color': getTypeColor(pokemon.type[0])}">
+        <img :src="pokemon.imgUrl" :alt="pokemon.name" class="card-image">
+        <h2>{{ formattedPokemonName(pokemon) }}</h2>
+        <p>{{ pokemonTypeText(pokemon) }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
