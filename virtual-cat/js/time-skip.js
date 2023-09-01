@@ -1,71 +1,99 @@
-// Função para obter o horário atual formatado
-function getFormattedTime() {
-    let dataAtual = new Date();
-    let hora = dataAtual.getHours();
-    let minutos = dataAtual.getMinutes();
-    let segundos = dataAtual.getSeconds();
 
-    if (hora < 10) hora = '0' + hora;
-    if (minutos < 10) minutos = '0' + minutos;
-    if (segundos < 10) segundos = '0' + segundos;
+	function saveTime() {
+	  const currentTime = new Date().getTime(); // Obtém o horário atual em milissegundos
+	  localStorage.setItem('savedTime', currentTime);
+	}
 
-    return hora + ':' + minutos + ':' + segundos;
-}
+	// Adiciona o evento para salvar o horário antes de fechar/atualizar a página
+	window.addEventListener('beforeunload', saveTime);
 
-// Função para calcular a diferença de tempo
-function calcularDiferencaTempo(horarioAnterior, horarioAtual) {
-    let anterior = new Date('2000-01-01 ' + horarioAnterior);
-    let atual = new Date('2000-01-01 ' + horarioAtual);
 
-    let diferencaMilissegundos = atual - anterior;
-    let diferencaMinutos = diferencaMilissegundos / (1000 * 60);
+	// Função para calcular a diferença de tempo em minutos
+	function calculateTimeDifference() {
+	  const savedTime = localStorage.getItem('savedTime');
+	  
+	  if (savedTime) {
+	    const currentTime = new Date().getTime();
+	    const differenceInMilliseconds = currentTime - parseInt(savedTime);
+	    const differenceInMinutes = Math.floor(differenceInMilliseconds / 60000); // 1 min = 60000 ms
+	    
+	    return differenceInMinutes;
+	  }
+	  
+	  return 0; // Se não houver hora salva, a diferença é zero
+	}
 
-    let horas = Math.floor(diferencaMinutos / 60);
-    let minutos = Math.round(diferencaMinutos % 60);
 
-    return { horas: horas, minutos: minutos };
-}
+function timeSkip() {
+  const timeDifferenceInMinutes = calculateTimeDifference(); // Calcula a diferença de tempo a cada execução
 
-// Verifica se já existe um horário no localStorage
-let horarioAnterior = localStorage.getItem('horarioFechamento');
+  if (timeDifferenceInMinutes >= 720) {
+	    
+		health -= 100;
+		happy -= 100;
+		alimentation -= 100;
+		hydration -= 100;
+		vitality -=  100;
+		cleaning -=  100;
+		bathroom -=  100;
+		ageUpdate() 
 
-// Obtém o horário atual formatado
-let horarioAtual = getFormattedTime();
+  } else if (timeDifferenceInMinutes >= 480) {
 
-// Calcula a diferença de tempo e verifica a condição
-if (horarioAnterior) {
-    let diferenca = calcularDiferencaTempo(horarioAnterior, horarioAtual);
+	  health -= randomNumber * 50;
+		happy -= randomNumber * 50;
+		alimentation -= randomNumber * 50;
+		hydration -= randomNumber * 50;
+		vitality -= randomNumber * 50;	
+		cleaning -= randomNumber * 50;
+		bathroom -= randomNumber * 50;
 
-    if (diferenca.horas === 1) {   
-      	
-      	health -= randomNumber * 5;
-		happy -= randomNumber * 5;
-		alimentation -= randomNumber * 5;
-		hydration -= randomNumber * 5;
-		vitality -= randomNumber * 5;
-		cleaning -= randomNumber * 5;
-		bathroom -= randomNumber * 5; 
+  } else if (timeDifferenceInMinutes >= 240) {
 
-    } else if (diferenca.horas === 2) {   
-      	
-      	health -= randomNumber * 10;
+	  health -= randomNumber * 40;
+		happy -= randomNumber * 40;
+		alimentation -= randomNumber * 40;
+		hydration -= randomNumber * 40;
+		vitality -= randomNumber * 40;
+		cleaning -= randomNumber * 40;
+		bathroom -= randomNumber * 40;
+
+  } else if (timeDifferenceInMinutes >= 120) {
+
+	  health -= randomNumber * 30;
+		happy -= randomNumber * 30;
+		alimentation -= randomNumber * 30;
+		hydration -= randomNumber * 30;
+		vitality -= randomNumber * 30;
+		cleaning -= randomNumber * 30;
+		bathroom -= randomNumber * 30;
+
+  } else if (timeDifferenceInMinutes >= 60) {
+
+	  health -= randomNumber * 20;
+		happy -= randomNumber * 20;
+		alimentation -= randomNumber * 20;
+		hydration -= randomNumber * 20;
+		vitality -= randomNumber * 20;
+		cleaning -= randomNumber * 20;
+		bathroom -= randomNumber * 20;
+
+  } else if (timeDifferenceInMinutes >= 30) {
+
+	  health -= randomNumber * 10;
 		happy -= randomNumber * 10;
 		alimentation -= randomNumber * 10;
 		hydration -= randomNumber * 10;
 		vitality -= randomNumber * 10;
 		cleaning -= randomNumber * 10;
-		bathroom -= randomNumber * 10; 
+		bathroom -= randomNumber * 10;
 
-    } else if (diferenca.horas === 3) {   
-      	
-      	health -= randomNumber * 15;
-		happy -= randomNumber * 15;
-		alimentation -= randomNumber * 15;
-		hydration -= randomNumber * 15;
-		vitality -= randomNumber * 15;
-		cleaning -= randomNumber * 15;
-		bathroom -= randomNumber * 15; 
-    }
+  }
 
 
 }
+
+const timeSkipInterval = setTimeout(timeSkip, 5000);
+
+
+ 

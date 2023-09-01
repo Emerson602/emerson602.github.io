@@ -96,9 +96,9 @@ let randomNumberActions = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
 
 function disableAndEnabledActionButtons() {
 
-      if (health <= 0) {
+    if (health <= 0) {
 
-      run.setAttribute('id', 'not-clickable');
+      run.setAttribute('id', 'not-clickable');      
       play.setAttribute('id', 'not-clickable');
       sleep.setAttribute('id', 'not-clickable');
       toilet.setAttribute('id', 'not-clickable');
@@ -119,7 +119,7 @@ function disableAndEnabledActionButtons() {
 
       return 
 
-    }; 
+   }; 
 
     if (vitality <= 30 || alimentation <= 30 || bathroom <= 30|| hydration <= 30) {
 
@@ -288,6 +288,47 @@ const callFunctions = (indexStatus, updadeImages, updateAllBars) => {
 
 };
 
+
+  function deactivateAllButtonsActions() {
+
+    run.setAttribute('id', 'not-clickable');
+    run.disabled = true;
+
+    play.setAttribute('id', 'not-clickable');
+    play.disabled = true;
+
+    sleep.setAttribute('id', 'not-clickable');
+    sleep.disabled = true;
+
+    toilet.setAttribute('id', 'not-clickable');
+    toilet.disabled = true;
+
+    kindness.setAttribute('id', 'not-clickable');
+    kindness.disabled = true;
+
+    littleSnack.setAttribute('id', 'not-clickable');
+    littleSnack.disabled = true;
+
+    eat.setAttribute('id', 'not-clickable');
+    eat.disabled = true;
+
+    drink.setAttribute('id', 'not-clickable');
+    drink.disabled = true;
+
+    relax.setAttribute('id', 'not-clickable');
+    relax.disabled = true;
+
+    bath.setAttribute('id', 'not-clickable');
+    bath.disabled = true;
+
+    brushTeeth.setAttribute('id', 'not-clickable');
+    brushTeeth.disabled = true;
+
+    futebol.setAttribute('id', 'not-clickable')
+    futebol.disabled = true;  
+
+  };
+
 function toRun() { 
 
   if(alimentation > 30 || hydration > 30 || vitality > 30 || bathroom > 30) { 
@@ -297,8 +338,8 @@ function toRun() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/running.gif';
-    run.setAttribute('id', 'not-clickable');      
-    run.disabled = true;     
+    delayAllButtonActions() 
+
     delayUpdateImages;
     delayRunButton;
     debounceClickSoundEffect(); 
@@ -340,8 +381,8 @@ function toPlay() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/joking.gif';  
-    play.setAttribute('id', 'not-clickable');     
-    play.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayPlayButton;
     debounceClickSoundEffect();
@@ -381,8 +422,8 @@ function toSleep() {
   containerActions.setAttribute('class', 'container-actions-hidden');
 
   imageUrl = './animations/sleeping.gif';  
-  sleep.setAttribute('id', 'not-clickable');     
-  sleep.disabled = true;
+  deactivateAllButtonsActions()
+
   delayUpdateImages;
   delaySleepButton;
   debounceClickSoundEffect();
@@ -421,8 +462,8 @@ function toToilet() {
   containerActions.setAttribute('class', 'container-actions-hidden');
 
   imageUrl = './animations/bathroom.gif';  
-  toilet.setAttribute('id', 'not-clickable');     
-  toilet.disabled = true;
+  deactivateAllButtonsActions()
+
   delayUpdateImages;
   delayToiletButton;
   debounceClickSoundEffect();
@@ -458,8 +499,8 @@ function toKindness() {
   containerActions.setAttribute('class', 'container-actions-hidden');
 
   imageUrl = './animations/kindness.gif';  
-  kindness.setAttribute('id', 'not-clickable');     
-  kindness.disabled = true;
+  deactivateAllButtonsActions()
+
   delayUpdateImages;
   delayKindnessButton;
   debounceClickSoundEffect();
@@ -489,8 +530,8 @@ function toLittleSnack() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/little-snack.gif';  
-    littleSnack.setAttribute('id', 'not-clickable');     
-    littleSnack.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayLittleSnackButton;  
     debounceClickSoundEffect();  
@@ -529,8 +570,8 @@ function toEat() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/eating.gif';  
-    eat.setAttribute('id', 'not-clickable');     
-    eat.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayEatButton; 
     debounceClickSoundEffect();   
@@ -577,8 +618,8 @@ function toDrink() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/drinking.gif';  
-    drink.setAttribute('id', 'not-clickable');     
-    drink.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayDrinkButton;  
     debounceClickSoundEffect();  
@@ -617,8 +658,8 @@ function toRelax() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/relax.gif';  
-    relax.setAttribute('id', 'not-clickable');     
-    relax.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayRelaxButton; 
     debounceClickSoundEffect();   
@@ -657,8 +698,8 @@ function toBath() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/bathing.gif';  
-    bath.setAttribute('id', 'not-clickable');     
-    bath.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayBathButton;
     debounceClickSoundEffect();
@@ -704,8 +745,8 @@ function toBrushTeeth() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/brush-teeth.gif';  
-    brushTeeth.setAttribute('id', 'not-clickable');     
-    brushTeeth.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayBrushTeethButton;
     debounceClickSoundEffect();
@@ -750,8 +791,8 @@ function toFutebol() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/fut.gif';  
-    futebol.setAttribute('id', 'not-clickable');     
-    futebol.disabled = true;
+    deactivateAllButtonsActions()
+
     delayUpdateImages;
     delayFutebolButton;
     debounceClickSoundEffect();
@@ -809,5 +850,5 @@ btnBath.addEventListener('click', toBath);
 btnBrushTeeth.addEventListener('click', toBrushTeeth);
 btnFutebol.addEventListener('click', toFutebol);
 
-const updateAllBarsInterval = setInterval(updateAllBars, 3000);
-const disableAndEnabledActionButtonsInterval = setInterval(disableAndEnabledActionButtons, 3000);
+const updateAllBarsInterval = setInterval(updateAllBars, 1000);
+const disableAndEnabledActionButtonsInterval = setInterval(disableAndEnabledActionButtons, 10000);

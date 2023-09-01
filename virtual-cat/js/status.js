@@ -1,3 +1,10 @@
+const healthUpdateInterval = setInterval(healthStatus, 1200000);
+const happyUpdateInterval = setInterval(happyStatus, 1100000);
+const alimentationUpdateInterval = setInterval(alimentationStatus, 1000000);
+const hydrationUpdateInterval = setInterval(hydrationStatus, 900000);
+const vitalityUpdateInterval = setInterval(vitalityStatus, 800000);
+const cleaningUpdateInterval = setInterval(cleaningStatus, 700000);
+const bathroomUpdateInterval = setInterval(bathroomStatus, 600000);
 
 function healthStatus() {    
 
@@ -15,10 +22,7 @@ function healthStatus() {
     health -= randomNumber * 6;
   };  
 
-  healthBar.style.width = health + '%';  
 };
-
-healthStatus()
 
 function happyStatus() {  
 
@@ -30,10 +34,8 @@ function happyStatus() {
     happy -= randomNumber;    
   }
 
-  happyBar.style.width = happy + '%';     
 };
 
-happyStatus()
 
 function alimentationStatus() {  
   
@@ -43,13 +45,9 @@ function alimentationStatus() {
     alimentation -= randomNumber * 2;
   } else {
     alimentation -= randomNumber;   
-  }
-
-  alimentationBar.style.width = alimentation + '%';  
+  }  
 
 };
-
-alimentationStatus()
 
 function hydrationStatus() { 
 
@@ -61,11 +59,7 @@ function hydrationStatus() {
     hydration -= randomNumber;    
   }
 
-  hydrationBar.style.width = hydration + '%';
-
 };
-
-hydrationStatus()
 
 function vitalityStatus() { 
 
@@ -75,13 +69,9 @@ function vitalityStatus() {
     vitality -= randomNumber * 2;
   } else {
     vitality -= randomNumber * 3;   
-  }
-
-  vitalityBar.style.width = vitality + '%'; 
+  } 
 
 };
-
-vitalityStatus()
 
 function cleaningStatus() { 
 
@@ -93,11 +83,7 @@ function cleaningStatus() {
     cleaning -= randomNumber; 
   }
 
-  cleaningBar.style.width = cleaning + '%'; 
-
 }; 
-
-cleaningStatus()
 
 function bathroomStatus() {  
 
@@ -107,13 +93,9 @@ function bathroomStatus() {
     bathroom -= randomNumber * 2;
   } else {
     bathroom -= randomNumber;   
-  }
-
-  bathroomBar.style.width = bathroom + '%';  
+  }  
 
 };
-
-bathroomStatus()
 
 function limiteStatus() {
   
@@ -121,7 +103,7 @@ function limiteStatus() {
     health  = 0;
     clearInterval(healthUpdateInterval);
   } else if (health > 100) {
-    health == 100;
+    health = 100;
   } else {
     healthUpdateInterval
   } 
@@ -130,7 +112,7 @@ function limiteStatus() {
     happy  = 0;
     clearInterval(happyUpdateInterval);
   } else if (happy > 100) {
-     happy == 100;
+     happy = 100;
   } else {
     happyUpdateInterval
   } 
@@ -139,7 +121,7 @@ function limiteStatus() {
     alimentation  = 0;
     clearInterval(alimentationUpdateInterval);
   } else if (alimentation > 100) {
-    alimentation == 100;
+    alimentation = 100;
   } else {
     alimentationUpdateInterval
   }
@@ -148,7 +130,7 @@ function limiteStatus() {
     hydration  = 0;
     clearInterval(hydrationUpdateInterval);
   } else if (hydration > 100) {
-    hydration == 100; 
+    hydration = 100; 
   } else {
     hydrationUpdateInterval
   }
@@ -157,7 +139,7 @@ function limiteStatus() {
     vitality = 0;
     clearInterval(vitalityUpdateInterval);
   } else if (vitality > 100) {
-    vitality == 100; 
+    vitality = 100; 
   } else {
     vitalityUpdateInterval
   }
@@ -166,7 +148,7 @@ function limiteStatus() {
     cleaning = 0;    
     clearInterval(cleaningUpdateInterval);
   } else if (cleaning > 100) {
-    cleaning == 100;
+    cleaning = 100;
   }else {
     cleaningUpdateInterval
   }
@@ -175,10 +157,18 @@ function limiteStatus() {
     bathroom = 0;
     clearInterval(bathroomUpdateInterval);
   } else if (bathroom > 100) {
-    bathroom == 100;
+    bathroom = 100;
   }else {
     bathroomUpdateInterval
   }
+
+  healthBar.style.width = health + '%';
+  happyBar.style.width = happy + '%';
+  alimentationBar.style.width = alimentation + '%';
+  hydrationBar.style.width = hydration + '%';
+  vitalityBar.style.width = vitality + '%';
+  cleaningBar.style.width = cleaning + '%';
+  bathroomBar.style.width = bathroom + '%';
 
 }; 
 
@@ -229,13 +219,9 @@ function updateBar(barElement, value) {
 
 }; 
 
-const healthUpdateInterval = setInterval(healthStatus, 120000);
-const happyUpdateInterval = setInterval(happyStatus, 110000);
-const alimentationUpdateInterval = setInterval(alimentationStatus, 100000);
-const hydrationUpdateInterval = setInterval(hydrationStatus, 90000);
-const vitalityUpdateInterval = setInterval(vitalityStatus, 80000);
-const cleaningUpdateInterval = setInterval(cleaningStatus, 70000);
-const bathroomUpdateInterval = setInterval(bathroomStatus, 60000); 
 
-const limiteUpdateStatusInterval = setInterval(limiteStatus, 30000);
-const yourCatDiedUpdateInterval = setInterval(yourCatDied, 60000);
+
+
+
+const limiteUpdateStatusInterval = setInterval(limiteStatus, 1000);
+const yourCatDiedUpdateInterval = setInterval(yourCatDied, 1000);

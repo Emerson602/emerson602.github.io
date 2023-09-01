@@ -47,7 +47,7 @@ const btnStatus = document.querySelector('.btn-status');
 const btnActions = document.querySelector('.btn-actions');
 
 
-let imageInterval = 30000; 
+let imageInterval = 60000; 
 
 function containerStatusActive() {
 
@@ -82,7 +82,7 @@ function indexStatus() {
 
 };
 
-const indexStatusUpdateInterval = setInterval(indexStatus, 150000); 
+const indexStatusUpdateInterval = setInterval(indexStatus, 2000); 
 
 
 
