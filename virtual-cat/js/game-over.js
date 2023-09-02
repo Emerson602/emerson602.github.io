@@ -4,7 +4,7 @@ const gameOverInterval = setInterval(gameOver, 1000);
 function gameOver() { 
 
 
-  if (age >= lifetime || health <= 100){
+  if (age >= lifetime || health <= 0){
 
     imageUrl = './imgs/dead.webp';
     myAudio.paused
