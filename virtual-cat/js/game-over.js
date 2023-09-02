@@ -1,17 +1,18 @@
 const gameOverInterval = setInterval(gameOver, 1000);
 
+
 function gameOver() { 
 
 
-  if (age >= lifetime || health <= 0){
+  if (age >= lifetime || health <= 100){
 
     imageUrl = './imgs/dead.webp';
     myAudio.paused
 
     const gameOverDiv = document.createElement("div");
     const gameOverMessage = document.createElement("span");
-    const restartButton = document.createElement("button");
-    const restartBtn = document.querySelector('.restart-btn');
+    const restartButton = document.createElement("button"); 
+
     content.appendChild(gameOverDiv);
     gameOverDiv.appendChild(gameOverMessage);
     gameOverDiv.appendChild(restartButton);
@@ -22,12 +23,12 @@ function gameOver() {
     gameOverMessage.innerText = `O ${name} morreu!`
     restartButton.innerText = "Novo jogo!";
 
-    clearInterval(gameOver);
+    clearInterval(gameOverInterval);
     clearInterval(timeSkipInterval)
     clearInterval(limiteUpdateStatusInterval)
     clearInterval(updateAllBarsInterval)
     clearInterval(disableAndEnabledActionButtonsInterval)
-    clearInterval(ageUpdateInterval)
+    clearInterval(ageUpdateInterval)  
     clearInterval(growthInterval)
     clearInterval(storeDateInterval)
     clearInterval(timeSkipInterval)  
@@ -47,25 +48,32 @@ function gameOver() {
     hydration = 0;
     vitality = 0;
     cleaning = 0; 
-    bathroom = 0; 
+    bathroom = 0;
 
-   
-    const restartGame = restartBtn.addEventListener('click', () => { 
+    const restartBtn = document.querySelector('.restart-btn');
 
-      restartBtn.innerText = "Reiniciando..."
+    const restartGame =  restartBtn.addEventListener('click', () => {
 
-      localStorage.clear();
+    restartBtn.innerText = "Reiniciando..."
 
-      setTimeout(() => {
-        location.reload();
-      }, 2000);
-    });   
+    localStorage.clear();
 
+    setTimeout(() => {
+      location.reload();
+    }, 3000); 
+
+});  
+      
   }
 
 }; 
 
-gameOver()
+gameOver();
+
+
+
+
+
 
 
 
