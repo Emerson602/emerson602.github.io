@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rastreamento</title>        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#141414">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#141414" />
+    <meta name="msapplication-navbutton-color" content="#141414" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+
+    <style type="text/css">
+        
+        *{
+            padding: 0;
+            margin: 0;             
+        }
+
+        .rastreamento{
+
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .status{
+
+           width: 85vw;
+           height: auto;
+           padding: 50px 10px; 
+           display: none;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           background-color: #F4F5FA; 
+           font-family: sans-serif;
+           font-size: 1.5rem; 
+           border-radius: 8px; 
+           box-shadow: 0 4px 8px 0 rgb(0 0 0 / 60%);
+           line-height: 40px;
+           text-align: center;
+           animation: rast 2s ease-in;
+           animation-delay: 1s;
+           opacity: 0;
+           animation-fill-mode: forwards;
+        } 
+
+
+        @media (max-width: 400px){
+
+            .status{
+                font-size: 1.1rem;
+                 width: 85vw;
+                 height: auto;
+            }
+        }
+
+
+          @keyframes rast{
+
+            0%{
+
+                opacity: 0;
+                width: 0;
+            }
+
+            100%{
+
+                opacity: 1;
+                width: 85vw;
+            }
+        }
+      
+
+        .status h2{
+
+           margin: 15px 0 25px 0; 
+           animation: on 2s ease-in;
+           animation-delay: 2s;
+           opacity: 0;
+           animation-fill-mode: forwards;
+        }
+
+
+        .status span{
+
+           margin: 5px 0;
+           animation: on 2s ease-in;
+           animation-delay: 2s;
+           opacity: 0;
+           animation-fill-mode: forwards;
+        }
+
+
+         @keyframes on{
+
+            0%{
+
+                opacity: 0;                
+            }
+
+            100%{
+
+                opacity: 1;                 
+            }
+        }
+      
+
+
+    </style>    
+    
+
+</head>
+
+
+<body>  
+
+    
+
+
+  
+    
+
+
+    <div class="rastreamento" id="rastreamento">          
+
+
+        <div id="status" class="status"></div>
+
+    </div>
+
+
+   
+
+
+
+
+
+<script type="text/javascript">
+
+</script>
+
+
+
+<script type="text/javascript">
+   
+      
+  let codigo = window.prompt('Digite o código de rastreamento', 'EX: AM148631BR'); 
+  let rastreamento = document.querySelector('#rastreamento');
+  let status = document.querySelector('#status');
+
+
+  if(codigo === 'fre'){
+
+     let rastreamento = document.createElement('h2');
+     let pedido = document.createElement('span');
+     let recebido = document.createElement('span');
+     let data_recebido = document.createElement('span');
+     let saida = document.createElement('span');
+     let data_saida = document.createElement('span');
+     let entrega = document.createElement('span');
+     let data_entrega = document.createElement('span');
+
+    /* ============Status do objeto================*/ 
+
+     rastreamento.innerHTML = "Rastreamento";
+
+     pedido.innerHTML = "Pedido: AM148631";
+
+     recebido.innerHTML = "Remessa recebida:";
+     data_recebido.innerHTML = "18/03/2022";
+
+     saida.innerHTML = "Saída para entrega:";
+     data_saida.innerHTML = "";
+
+     entrega.innerHTML = "Entrega realizada:";
+     data_entrega.innerHTML = ""; 
+
+    /* ============================================*/  
+
+     status.appendChild(rastreamento);
+     status.appendChild(pedido);
+     status.appendChild(recebido);
+     status.appendChild(data_recebido);
+     status.appendChild(saida);
+     status.appendChild(data_saida);
+     status.appendChild(entrega);  
+     status.appendChild(data_entrega);
+
+     rastreamento.style.display = "flex";   
+     status.style.display = "flex";  
+
+  } 
+
+
+  else if(codigo === 'fre2'){
+
+     let rastreamento = document.createElement('h2');
+     let pedido = document.createElement('span');
+     let recebido = document.createElement('span');
+     let data_recebido = document.createElement('span');
+     let saida = document.createElement('span');
+     let data_saida = document.createElement('span');
+     let entrega = document.createElement('span');
+     let data_entrega = document.createElement('span');
+
+    /* ============Status do objeto================*/ 
+
+     rastreamento.innerHTML = "Rastreamento";
+
+     pedido.innerHTML = "Pedido: AM148631";
+
+     recebido.innerHTML = "Remessa recebida:";
+     data_recebido.innerHTML = "18/03/2022";
+
+     saida.innerHTML = "Saída para entrega:";
+     data_saida.innerHTML = "";
+
+     entrega.innerHTML = "Entrega realizada:";
+     data_entrega.innerHTML = ""; 
+
+    /* ============================================*/  
+
+     status.appendChild(rastreamento);
+     status.appendChild(pedido);
+     status.appendChild(recebido);
+     status.appendChild(data_recebido);
+     status.appendChild(saida);
+     status.appendChild(data_saida);
+     status.appendChild(entrega);  
+     status.appendChild(data_entrega);
+
+     rastreamento.style.display = "flex";   
+     status.style.display = "flex";  
+
+  } 
+
+else{
+
+    alert('Código invalido!');  
+    location.reload();  
+}  
+
+
+</script>  
+ 
+
+</body> 
+</html>
