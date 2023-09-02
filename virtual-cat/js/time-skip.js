@@ -1,31 +1,31 @@
 
 	function saveTime() {
-	  const currentTime = new Date().getTime(); // Obtém o horário atual em milissegundos
+		
+	  const currentTime = new Date().getTime(); 
 	  localStorage.setItem('savedTime', currentTime);
 	}
 
-	// Adiciona o evento para salvar o horário antes de fechar/atualizar a página
+	
 	window.addEventListener('beforeunload', saveTime);
 
-
-	// Função para calcular a diferença de tempo em minutos
 	function calculateTimeDifference() {
 	  const savedTime = localStorage.getItem('savedTime');
 	  
 	  if (savedTime) {
 	    const currentTime = new Date().getTime();
 	    const differenceInMilliseconds = currentTime - parseInt(savedTime);
-	    const differenceInMinutes = Math.floor(differenceInMilliseconds / 60000); // 1 min = 60000 ms
+	    const differenceInMinutes = Math.floor(differenceInMilliseconds / 60000); 
 	    
 	    return differenceInMinutes;
 	  }
 	  
-	  return 0; // Se não houver hora salva, a diferença é zero
+	  return 0; 
 	}
 
 
 function timeSkip() {
-  const timeDifferenceInMinutes = calculateTimeDifference(); // Calcula a diferença de tempo a cada execução
+
+  const timeDifferenceInMinutes = calculateTimeDifference(); 
 
   if (timeDifferenceInMinutes >= 720) {
 	    

@@ -10,7 +10,6 @@ const myAudioClick = document.querySelector("#audio-click");
 let clickSoundEffectTimeout = null;
 
 
-
 function activateAudio() {
 
   if (myAudio.paused) {

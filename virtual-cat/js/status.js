@@ -174,22 +174,6 @@ function limiteStatus() {
 
 limiteStatus()
 
-function yourCatDied() {
-
-  if (age === lifetime || health === 0){
-
-    health = 0;
-    happy = 0; 
-    alimentation = 0; 
-    hydration = 0;
-    vitality = 0;
-    cleaning = 0; 
-    bathroom = 0;        
-  }
-
-}; 
-
-yourCatDied()
 
 function updateBar(barElement, value) {
 
@@ -224,4 +208,3 @@ function updateBar(barElement, value) {
 
 
 const limiteUpdateStatusInterval = setInterval(limiteStatus, 1000);
-const yourCatDiedUpdateInterval = setInterval(yourCatDied, 1000);
