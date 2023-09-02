@@ -8,6 +8,7 @@
 </head>
 <body onload="indexStatus(); updadeImages(); updateAllBars(); disableAndEnabledActionButtons(); growth()"> 
 
+
 <div id="content">
 
     <audio id="audio" controls loop autoplay>
@@ -18,14 +19,18 @@
       <source src="./sounds/sound-click.mp3" type="audio/mpeg">      
     </audio> 
 
-    <header>
+    <form class="game-start">
 
-      <div>
-        <span class="nameBar"></span>
-        <span class="ageBar"></span>
-      </div>
+        <label>Virtual Cat</label>        
+        <input type="text" id="cat-name-input" placeholder="Digite o nome do seu gato">
+        <button id="btn-start">Começar!</button>
 
-    </header> 
+    </form>
+
+    <div class="info">
+      <span class="nameBar"></span>
+      <span class="ageBar"></span>
+    </div> 
 
     <div class="controls">
 
@@ -80,15 +85,16 @@
     
 </div>  
 
-
 <script type="text/javascript" src="./js/index.js" defer=""></script>
+<script type="text/javascript" src="./js/game-start.js" defer=""></script>
 <script type="text/javascript" src="./js/growth.js" defer=""></script>
 <script type="text/javascript" src="./js/animations.js" defer=""></script>
 <script type="text/javascript" src="./js/status.js" defer=""></script>
 <script type="text/javascript" src="./js/actions.js" defer=""></script>
 <script type="text/javascript" src="./js/sounds.js" defer=""></script>
-<script type="text/javascript" src="./js/notifications.js" defer=""></script>
 <script type="text/javascript" src="./js/store-date.js" defer=""></script>
+<script type="text/javascript" src="./js/time-skip.js" defer=""></script>
+<script type="text/javascript" src="./js/game-over.js" defer=""></script>
 
 </body>
 </html>
