@@ -338,7 +338,7 @@ function toRun() {
     containerActions.setAttribute('class', 'container-actions-hidden');
 
     imageUrl = './animations/running.gif';
-    delayAllButtonActions() 
+    deactivateAllButtonsActions() 
 
     delayUpdateImages;
     delayRunButton;
