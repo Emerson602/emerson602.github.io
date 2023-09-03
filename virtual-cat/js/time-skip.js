@@ -41,35 +41,15 @@ function timeSkip() {
   } else if (timeDifferenceInMinutes >= 480) {
 
   	months += 1;  	
-	  health -= randomNumber * 50;
-		happy -= randomNumber * 50;
-		alimentation -= randomNumber * 50;
-		hydration -= randomNumber * 50;
-		vitality -= randomNumber * 50;	
-		cleaning -= randomNumber * 50;
-		bathroom -= randomNumber * 50;		
-
-  } else if (timeDifferenceInMinutes >= 240) {
-
-	  health -= randomNumber * 40;
-		happy -= randomNumber * 40;
-		alimentation -= randomNumber * 40;
-		hydration -= randomNumber * 40;
-		vitality -= randomNumber * 40;
-		cleaning -= randomNumber * 40;
-		bathroom -= randomNumber * 40;
-
-  } else if (timeDifferenceInMinutes >= 120) {
-
 	  health -= randomNumber * 30;
 		happy -= randomNumber * 30;
 		alimentation -= randomNumber * 30;
 		hydration -= randomNumber * 30;
-		vitality -= randomNumber * 30;
+		vitality -= randomNumber * 30;	
 		cleaning -= randomNumber * 30;
-		bathroom -= randomNumber * 30;
+		bathroom -= randomNumber * 30;		
 
-  } else if (timeDifferenceInMinutes >= 60) {
+  } else if (timeDifferenceInMinutes >= 240) {
 
 	  health -= randomNumber * 20;
 		happy -= randomNumber * 20;
@@ -79,7 +59,17 @@ function timeSkip() {
 		cleaning -= randomNumber * 20;
 		bathroom -= randomNumber * 20;
 
-  } else if (timeDifferenceInMinutes >= 30) {
+  } else if (timeDifferenceInMinutes >= 120) {
+
+	  health -= randomNumber * 15;
+		happy -= randomNumber * 15;
+		alimentation -= randomNumber * 15;
+		hydration -= randomNumber * 15;
+		vitality -= randomNumber * 15;
+		cleaning -= randomNumber * 15;
+		bathroom -= randomNumber * 15;
+
+  } else if (timeDifferenceInMinutes >= 60) {
 
 	  health -= randomNumber * 10;
 		happy -= randomNumber * 10;
@@ -88,6 +78,16 @@ function timeSkip() {
 		vitality -= randomNumber * 10;
 		cleaning -= randomNumber * 10;
 		bathroom -= randomNumber * 10;
+
+  } else if (timeDifferenceInMinutes >= 30) {
+
+	  health -= randomNumber * 5;
+		happy -= randomNumber * 5;
+		alimentation -= randomNumber * 5;
+		hydration -= randomNumber * 5;
+		vitality -= randomNumber * 5;	
+		cleaning -= randomNumber * 5;
+		bathroom -= randomNumber * 5;
 
   }
 
