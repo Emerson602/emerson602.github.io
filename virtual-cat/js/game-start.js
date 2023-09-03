@@ -6,6 +6,7 @@ const storedName = localStorage.getItem('name');
 const storedAge = localStorage.getItem('age');
 const storedMonths = localStorage.getItem('months');
 
+
 function newGame() {
 
   if(storedName == null){
@@ -17,8 +18,27 @@ function newGame() {
       months = 0;
       localStorage.setItem("name", name);
       gameStartDiv.remove();
+      clearInterval(checkInterval)
 
-    });    
+    });     
+
+    const checkInterval = setInterval(check, 1000);
+
+    function check(){
+        
+        if (input.value.trim() === "") {
+            
+            btnStart.disabled = true;
+            btnStart.setAttribute('id', 'not-clickable');
+
+        } else {
+            
+            btnStart.disabled = false;
+            btnStart.setAttribute('id', 'btn-start'); 
+
+        }
+        
+    };   
 
   } else { 
        
@@ -39,7 +59,16 @@ function newGame() {
 
 }
 
-newGame();
+newGame(); 
+
+
+
+
+
+
+ 
+      
+
 
 
 

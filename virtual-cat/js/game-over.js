@@ -59,7 +59,11 @@ function gameOver() {
     localStorage.clear();
 
     setTimeout(() => {
+      
+      localStorage.setItem("age", age);
+      localStorage.setItem("months", months);      
       location.reload();
+      
     }, 3000); 
 
 });  

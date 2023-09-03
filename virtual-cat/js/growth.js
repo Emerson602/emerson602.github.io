@@ -9,7 +9,8 @@ function ageUpdate() {
     clearInterval(ageUpdateInterval);
   };
   
-};  
+}; 
+
 
 function growth() {
 

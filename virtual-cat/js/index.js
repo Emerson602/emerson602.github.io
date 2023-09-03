@@ -9,6 +9,10 @@ let imageUrl = './animations/main.gif';
 let name = parseInt(localStorage.getItem('name')) || '';
 let age = parseInt(localStorage.getItem('age')) || 0;
 let months = parseInt(localStorage.getItem('months')) || 0;
+
+localStorage.setItem("age", age);
+localStorage.setItem("months", months);
+
 const oneDay = 12 * 24 * 60 * 60 * 1000;
 
 const randomNumber = Math.floor(Math.random() * 2);
