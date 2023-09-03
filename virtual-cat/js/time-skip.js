@@ -1,6 +1,6 @@
 
 	function saveTime() {
-		
+
 	  const currentTime = new Date().getTime(); 
 	  localStorage.setItem('savedTime', currentTime);
 	}
@@ -39,18 +39,19 @@ function timeSkip() {
 		ageUpdate() 
 
   } else if (timeDifferenceInMinutes >= 480) {
-		months += 1;
-		health -= randomNumber * 50;
+
+  	months += 1;  	
+	  health -= randomNumber * 50;
 		happy -= randomNumber * 50;
 		alimentation -= randomNumber * 50;
 		hydration -= randomNumber * 50;
 		vitality -= randomNumber * 50;	
 		cleaning -= randomNumber * 50;
-		bathroom -= randomNumber * 50;
+		bathroom -= randomNumber * 50;		
 
   } else if (timeDifferenceInMinutes >= 240) {
 
-	        health -= randomNumber * 40;
+	  health -= randomNumber * 40;
 		happy -= randomNumber * 40;
 		alimentation -= randomNumber * 40;
 		hydration -= randomNumber * 40;
@@ -60,7 +61,7 @@ function timeSkip() {
 
   } else if (timeDifferenceInMinutes >= 120) {
 
-	        health -= randomNumber * 30;
+	  health -= randomNumber * 30;
 		happy -= randomNumber * 30;
 		alimentation -= randomNumber * 30;
 		hydration -= randomNumber * 30;
@@ -70,7 +71,7 @@ function timeSkip() {
 
   } else if (timeDifferenceInMinutes >= 60) {
 
-	        health -= randomNumber * 20;
+	  health -= randomNumber * 20;
 		happy -= randomNumber * 20;
 		alimentation -= randomNumber * 20;
 		hydration -= randomNumber * 20;
@@ -80,7 +81,7 @@ function timeSkip() {
 
   } else if (timeDifferenceInMinutes >= 30) {
 
-	        health -= randomNumber * 10;
+	  health -= randomNumber * 10;
 		happy -= randomNumber * 10;
 		alimentation -= randomNumber * 10;
 		hydration -= randomNumber * 10;
@@ -90,7 +91,13 @@ function timeSkip() {
 
   }
 
-
+	localStorage.setItem("health", health);
+	localStorage.setItem("happy", happy);
+	localStorage.setItem("alimentation", alimentation);
+	localStorage.setItem("hydration", hydration);
+	localStorage.setItem("vitality", vitality);
+	localStorage.setItem("cleaning", cleaning);
+	localStorage.setItem("bathroom", bathroom);
 }
 
 const timeSkipInterval = setTimeout(timeSkip, 5000);

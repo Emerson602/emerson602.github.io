@@ -33,6 +33,15 @@ let vitality = parseInt(localStorage.getItem('vitality')) || 100;
 let cleaning = parseInt(localStorage.getItem('cleaning')) || 100;
 let bathroom = parseInt(localStorage.getItem('bathroom')) || 100; 
 
+localStorage.setItem("health", health);
+localStorage.setItem("happy", happy);
+localStorage.setItem("alimentation", alimentation);
+localStorage.setItem("hydration", hydration);
+localStorage.setItem("vitality", vitality);
+localStorage.setItem("cleaning", cleaning);
+localStorage.setItem("bathroom", bathroom);
+
+
 const min = 15;
 const max = 27;
 let lifetime = Math.floor(Math.random() * (max - min + 1)) + min;
