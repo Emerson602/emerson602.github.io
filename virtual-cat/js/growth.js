@@ -38,5 +38,6 @@ function growth() {
 
 }; 
 
+
 const ageUpdateInterval = setInterval(ageUpdate, oneDay); 
 const growthInterval = setInterval(growth, 192000);

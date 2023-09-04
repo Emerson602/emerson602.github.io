@@ -6,10 +6,15 @@
   <title>Cat virtual</title>
   <link rel="stylesheet" href="./css/style.css">  
 </head>
-<body onload="indexStatus(); updadeImages(); updateAllBars(); disableAndEnabledActionButtons(); growth()"> 
+<body onload="indexStatus(); updadeImages(); updateAllBars(); disableAndEnabledActionButtons(); growth(); catCoinsUpdate();"> 
 
 
 <div id="content">
+
+    <div id="div-coins">
+      <img src="./imgs/catcoin.webp">
+      <span id="cat-coins"></span>
+    </div>
 
     <audio id="audio" controls loop autoplay>
       <source src="./sounds/sound-1.mp3" type="audio/mpeg">      
@@ -93,6 +98,7 @@
 <script type="text/javascript" src="./js/actions.js" defer=""></script>
 <script type="text/javascript" src="./js/sounds.js" defer=""></script>
 <script type="text/javascript" src="./js/store-date.js" defer=""></script>
+<script type="text/javascript" src="./js/cat-coins.js" defer=""></script>
 <script type="text/javascript" src="./js/time-skip.js" defer=""></script>
 <script type="text/javascript" src="./js/game-over.js" defer=""></script>
 

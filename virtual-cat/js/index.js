@@ -10,6 +10,10 @@ let name = parseInt(localStorage.getItem('name')) || '';
 let age = parseInt(localStorage.getItem('age')) || 0;
 let months = parseInt(localStorage.getItem('months')) || 0;
 
+const catCoinsInfo = document.querySelector('#cat-coins');
+let catCoins = parseInt(localStorage.getItem('catCoins')) || 0;
+localStorage.setItem("catCoins", catCoins);
+
 localStorage.setItem("age", age);
 localStorage.setItem("months", months);
 
@@ -92,7 +96,7 @@ function indexStatus() {
   vitalityText.innerHTML = ` Energia: ${vitality}%`;  
   cleaningText.innerHTML = `Limpeza: ${cleaning}%`;  
   bathroomText.innerHTML = `Aliviado: ${bathroom}%`; 
-
+  catCoinsInfo.innerText = `Catcoins: ${catCoins}`; 
 };
 
 const indexStatusUpdateInterval = setInterval(indexStatus, 2000); 

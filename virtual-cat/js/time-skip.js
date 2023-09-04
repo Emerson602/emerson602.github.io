@@ -58,6 +58,7 @@ function timeSkip() {
 		vitality -= randomNumber * 20;
 		cleaning -= randomNumber * 20;
 		bathroom -= randomNumber * 20;
+		returnPrize()
 
   } else if (timeDifferenceInMinutes >= 120) {
 
@@ -68,6 +69,7 @@ function timeSkip() {
 		vitality -= randomNumber * 15;
 		cleaning -= randomNumber * 15;
 		bathroom -= randomNumber * 15;
+		returnPrize()
 
   } else if (timeDifferenceInMinutes >= 60) {
 
@@ -78,6 +80,7 @@ function timeSkip() {
 		vitality -= randomNumber * 10;
 		cleaning -= randomNumber * 10;
 		bathroom -= randomNumber * 10;
+		returnPrize()
 
   } else if (timeDifferenceInMinutes >= 30) {
 
@@ -88,6 +91,7 @@ function timeSkip() {
 		vitality -= randomNumber * 5;	
 		cleaning -= randomNumber * 5;
 		bathroom -= randomNumber * 5;
+		returnPrize()
 
   }
 

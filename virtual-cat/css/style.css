@@ -52,6 +52,8 @@
   margin: 0 0 50px 0;
 }
 
+
+
 .info{
 
   position: absolute;
@@ -62,6 +64,55 @@
   width: 100%;  
   margin: 0;
   padding: 8px 0 8px 20px;
+}
+
+@media(max-width: 300px) {
+
+  .info{
+
+    position: absolute;
+    top: 6px;
+    padding: 8px 0 8px 10px;
+
+  }
+}
+
+#div-coins{
+
+   position: absolute;
+   top: 20px;
+   right: 10%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+@media(max-width: 300px) {
+
+  #div-coins{
+
+   position: absolute;
+   top: 10px;
+   right: 5%; 
+
+  }
+}
+
+#div-coins img{
+
+    width: 25px;
+    height: auto;
+    margin: 0 5px 0 0;
+}
+
+#cat-coins {
+    
+    color: #000;    
+    font-weight: bolder;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;    
 }
 
 button{
@@ -137,7 +188,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%); 
   background-color: rgba(20,20,20, 0.6);  
-  padding: 60px 10px;
+  padding: 60px 20px;
   border-radius: 10px;   
 }
 
@@ -438,7 +489,7 @@ img {
   font-size: 1rem;
 } 
 
-.restart-btn {
+#restart-btn {
 
   width: 140px;
   height: 50px;
@@ -450,7 +501,7 @@ img {
   font-size: 1rem;
 }
 
-.restart-btn:hover{
+#restart-btn:hover{
 
   cursor: pointer;
   transition: 1s;

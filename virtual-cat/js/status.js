@@ -1,10 +1,10 @@
-const healthUpdateInterval = setInterval(healthStatus, 120000);
-const happyUpdateInterval = setInterval(happyStatus, 110000);
-const alimentationUpdateInterval = setInterval(alimentationStatus, 100000);
-const hydrationUpdateInterval = setInterval(hydrationStatus, 90000);
-const vitalityUpdateInterval = setInterval(vitalityStatus, 80000);
-const cleaningUpdateInterval = setInterval(cleaningStatus, 70000);
-const bathroomUpdateInterval = setInterval(bathroomStatus, 60000);
+const healthUpdateInterval = setInterval(healthStatus, 300000);
+const happyUpdateInterval = setInterval(happyStatus, 290000);
+const alimentationUpdateInterval = setInterval(alimentationStatus, 280000);
+const hydrationUpdateInterval = setInterval(hydrationStatus, 260000);
+const vitalityUpdateInterval = setInterval(vitalityStatus, 250000);
+const cleaningUpdateInterval = setInterval(cleaningStatus, 240000);
+const bathroomUpdateInterval = setInterval(bathroomStatus, 230000);
 
 function healthStatus() {    
 
