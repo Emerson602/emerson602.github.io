@@ -59,8 +59,7 @@ export default {
       const urlSpritesParts = pokemon.url.split('/');   
       const idPokemons = urlSpritesParts[urlSpritesParts.length - 2];  
       this.id = idPokemons   
-      const urlSprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${idPokemons}.png`;  
-
+      const urlSprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${idPokemons}.png`;
       return urlSprites
     },
 
