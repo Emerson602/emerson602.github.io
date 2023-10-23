@@ -1,0 +1,512 @@
+	/*reset-initial*/
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+/*reset-end*/
+
+/*preloader-inicio*/
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#083D93;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+}
+
+.loader::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    margin: 8px;
+    animation: spin 1.2s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*preloader-final*/
+
+	/*whatsapp botão inicio*/	
+		.pulse {
+			background-color: #01e675;
+			color: #fff;
+			border-radius: 10px;
+			padding: 2px 3px 2px 3px;
+			position: fixed;
+			top: 40vh;
+			right: 2%;
+			z-index: 3;
+		}
+
+		.pulse:hover {
+
+			transition: 1s;
+			background-color: #F56E28;
+		}
+
+		.fa-whatsapp {
+
+			font-size: 2.5rem;	
+			
+
+		}
+
+	/*whatsapp botão final*/	
+
+/*cabecalho-initial*/
+
+.cabecalho {
+
+	height: 25vh;
+	background-color: #fff;
+
+}
+
+
+.container-pre-nav {
+
+	background-color: #1E2D69;
+	height: 4.5vh;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	
+
+}
+
+@media (max-width: 500px) {
+
+
+	.container-pre-nav {
+	
+	justify-content: center;	
+
+}
+
+
+
+}
+
+.text {
+
+	margin-left: 40px;
+	font-size: 0.875rem;
+    font-family: "Barlow", "Poppins",sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.43;
+}
+
+
+@media (max-width: 500px) {
+
+
+	.text {
+	
+	margin-left:0px;	
+
+}
+}
+
+
+.container-nav {
+
+	
+	height: 21vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	
+	
+}
+
+@media (max-width: 340px){
+
+
+	.container-nav {
+
+	
+	height: 21vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	
+}
+} 
+
+.logo {
+	position: relative;
+	left:10%;
+	width: 200px;
+	height: auto; 
+}
+
+@media (max-width: 700px){
+
+
+	.logo {
+	position: relative;
+	left:6%;	
+}
+} 
+
+
+@media (max-width: 400px){
+
+
+	.logo {
+	position: relative;
+	left:5%;
+	margin: 15px 0;
+	width: 180px;
+	height: auto;
+
+}
+} 
+
+
+
+@media (max-width: 340px){
+
+
+	.logo {
+	position: relative;
+	left:0%;
+	margin: 15px 0;
+
+}
+} 
+
+
+
+.line {
+
+	width: 100%; 		
+	border-color: #083D93;
+
+
+
+}
+
+
+@media (min-width: 340px) {
+
+	.line {
+
+	display: none;
+
+}
+
+} 
+
+
+.botao {
+
+	color: #fff;
+	background-color: #F56E28;
+	position: relative;
+	right:10%;		
+	width: 110px;
+	height: 45px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+}
+
+
+
+@media (max-width: 400px) {
+
+	.botao {
+
+		position: relative;
+		right:4%;	
+	}
+}
+
+
+@media (max-width: 340px) {
+
+	.botao {
+
+		position: relative;
+		right:0;	
+		padding: 12px 10px 12px 10px;
+		margin-top: 50px;
+	}
+}
+
+
+
+
+
+
+.botao:hover {
+
+	background-color: #083D93;
+	transition: 0.5s;
+	cursor: pointer;
+	
+
+}
+
+
+.link-popup {
+
+	color: #fff;
+	background-color: #F56E28;	
+	width: 110px;
+	height: 45px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	text-decoration: none;	
+	padding: 8px 14px 8px 14px;
+	border-radius: 2px;
+
+}
+
+.link-popup:hover {
+
+	background-color: #083D93;
+	transition: 0.5s;
+	cursor: pointer;
+
+}
+/*cabecalho-end*/  
+
+
+
+
+.container-text-2 {
+
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 20px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	
+
+} 
+
+@media (max-width: 340px) {
+
+	.container-text-2 {
+
+	
+	top:220px;
+
+} 
+}
+
+.text-2 {
+	color: #F56E28;
+	font-size: 1.5rem;
+	text-align: center;
+	font-family: "Barlow", "Poppins",sans-serif;
+	word-break: normal;
+	margin: 0 20px 0 20px;
+	display: none; 
+}
+
+.line-2 {
+
+	width: 80%; 		
+	position: relative;
+	top: -10px; /*80px*/
+	border-color: #083D93;
+		
+
+
+}
+
+
+.text-3 {
+
+	color: #781E7D;
+	font-size: 2rem;
+	text-align: center;
+	font-family: "Barlow", "Poppins",sans-serif;
+	position: relative;
+	top: 80px;
+	word-break: normal;
+	margin: 0 20px 0 20px; 
+
+}
+
+
+.container-buttons {
+
+	position: relative;
+	top: 150px;	
+	height: 200px;
+ 	width: 100%;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	flex-direction: column;
+ 	margin-bottom: 20px;
+}
+
+
+@media (max-width: 340px) {
+
+	.container-buttons {
+		position: relative;
+		top: 350px;
+	}
+}
+
+.fa-arrow-left {
+
+	padding: 2px 10px 2px 10px ;
+	
+}
+
+.back {
+
+	color: #fff;
+	background-color: #083D93;			
+	width: 310px;
+	height: 55px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+}
+
+@media (max-width: 340px) {
+
+	.back {
+
+		width: 90vw;
+	}
+} 
+
+
+.back:hover {
+
+	background-color: #F56E28; 
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+
+.contato {
+
+	color: #fff;
+	background-color: #F56E28;			
+	width: 210px;
+	height: 55px;
+	font-size: 1rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	position: relative;
+	top: 100px;
+}
+
+@media (max-width: 340px) {
+
+	.contato {
+
+		width: 90vw;
+		
+		
+	}
+} 
+
+
+.contato:hover {
+
+	background-color: #083D93; 
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+
+
+/*canais*/
+
+
+.container-canais {
+
+	width: auto;
+	height: auto; 	
+	position: relative;
+	top: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.container-genero {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.genero {
+
+	color: #781E7D;
+	font-size: 1.2rem;
+	font-family: "Barlow", "Poppins",sans-serif;
+	margin: 30px;
+	font-weight: bolder;
+}
+
+
+.img-canais {
+
+	height: auto;
+	max-height: 70px;
+	width: 120px; 
+	margin: 20px 30px 20px 30px;
+	border: solid 1px #083D93;
+	padding: 10px;
+}
