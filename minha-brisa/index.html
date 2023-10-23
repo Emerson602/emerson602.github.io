@@ -22,18 +22,7 @@
 
 <body style="overflow: hidden;" id="teste" onLoad="slide1 (), slide4 ()">  
 
-<!--popup-inicio
 
- 	
-
-   <div class="container-popup">
-
-      <a id="c-popup" onclick="myFunctionX()">
-      	<img class="popupimg" id="myPopup" src="imgs/popup.webp"></a>     	  		
-   </div>  
-
-
-popup-fim--> 
 
 	<!--preloader-inicio-->
 	
@@ -221,12 +210,12 @@ popup-fim-->
 		<div class="container-slide">
 
 			<div class="slide-desktop" id="main">
-				<img class="img-banner" src="bg-1.webp" alt="slide show" id="banner">  			
+				<img class="img-banner" src="./imgs/bg-1.webp" alt="slide show" id="banner">  			
 			</div>
 
 
 			<div class="slide-mobile" id="main">
-				<img class="img-banner" src="bg-1.webp" alt="slide show" id="banner2">  			
+				<img class="img-banner" src="./imgs/bg-1.webp" alt="slide show" id="banner2">  			
 			</div>
 
 			
@@ -1126,8 +1115,39 @@ popup-fim-->
 	</footer>
 
 
+<script type="text/javascript">
+	const intervalo = 4000;
 
-			
+	function slide1 () {
+		document.getElementById ("banner").src = "./imgs/bg-1.webp"
+		setTimeout("slide2()",intervalo); 
+	}	
+
+	function slide2 () {
+		document.getElementById ("banner").src = "./imgs/bg-2.webp"
+		setTimeout("slide3()",intervalo);
+	} 
+
+	function slide3 () {
+		document.getElementById ("banner").src = "./imgs/bg-3.webp"
+		setTimeout("slide1()",intervalo);
+	} 
+
+	function slide4 () {
+		document.getElementById ("banner2").src = "./imgs/banner-mobile-1.webp"
+		setTimeout("slide5()",intervalo); 
+	}	
+
+	function slide5 () {
+		document.getElementById ("banner2").src = "./imgs/banner-mobile-2.webp"
+		setTimeout("slide6()",intervalo);
+	}
+
+	function slide6 () {
+		document.getElementById ("banner2").src = "./imgs/banner-mobile-3.webp"
+		setTimeout("slide4()",intervalo);
+	} 
+</script>			
 
 <script type="text/javascript" src="./js/overlay.js"></script>
 <script type="text/javascript" src="./js/modal.js"></script>
@@ -1135,7 +1155,6 @@ popup-fim-->
 <script src="https://kit.fontawesome.com/6b5359d6c2.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./js/toggle.js"></script>
 <script type="text/javascript" src="./js/dropdown.js"></script>
-<script type="text/javascript" src="./js/slide.js"></script>
 <script type="text/javascript" src="./js/filter.js"></script>
 </body> 
 </html>			
