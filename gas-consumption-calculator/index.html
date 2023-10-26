@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculador de consumo de gás</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>{{ headerMessage }}</h1>    
+
+    <div id="container">
+        <div> 
+            <span>{{ timeMessage }}</span>
+            <input id="time" type="number" placeholder="Ex: 60">
+        </div>
+    
+        <div> 
+            <span>{{ consumptionMessage }}</span>
+            <input id="consumption" type="number" placeholder="Ex: 0,225">
+        </div>
+    
+        <div> 
+            <span>{{ capacityMessage }}</span>
+            <select name="cars"  id="capacity">
+                <option value="13">13 kg</option>
+                <option value="45">45 kg</option>         
+            </select>
+        </div>      
+    
+        <div> 
+            <span>{{ priceMessage }}</span>
+            <input id="price" type="number" placeholder="Ex: 110">
+        </div>
+
+        <div>
+            <p id="spent"></p>
+        </div>
+
+        <button @click="calculate">{{ buttonMessage }}</button>
+
+    </div>
+    
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
