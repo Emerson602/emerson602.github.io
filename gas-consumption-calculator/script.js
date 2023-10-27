@@ -68,11 +68,11 @@ const app = Vue.createApp({
                 toFixedIndex = 2               
               }
 
-              spent.innerHTML = `<span>Em ${this.timeValue} minutos de uso gasta aproximadamente <br> aproximadamente R$ ${spentResult.toFixed(2)} Reais .</span><br>
+              spent.innerHTML = `<span>Em ${this.timeValue} minutos de uso gasta <br> aproximadamente R$ ${spentResult.toFixed(2)} Reais .</span><br>
               <span>Total de gás consumido: ${totalConsumption.toFixed(2)} Kg/h .</span><br>
               <span>Utilizou aproximadamente ${percentageConsumption.toFixed(toFixedIndex)}% do volume total do botijão de gás.</span><br>
               <span>Restam aproximadamente ${percentageRemaining.toFixed(toFixedIndex)}% do volume total do botijão de gás.</span><br>
-              <span>Restam aproximadamente ${timeRemainingMinutes.toFixed(0)} em minutos para utilizar .</span><br>` 
+              <span>Restam aproximadamente ${timeRemainingMinutes.toFixed(0)} minutos para utilizar .</span><br>` 
               
               function close() {                
                 window.location.reload()                  
