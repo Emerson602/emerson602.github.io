@@ -32,7 +32,7 @@ h1 {
     width: 90vw;
     font-size: 1.8rem; 
     letter-spacing: 1.2px; 
-    line-height: 30px; 
+    line-height: 35px; 
 }
 
 span {
@@ -44,35 +44,56 @@ span {
 
 input {
     margin: 15px 0;
-    width: 400px;
-    height: 30px;
-    border-radius: 4px;
-    border-width: 2px;
-    outline: none;
-    box-shadow: 5px 5px;
-    font-size: 1rem;
 }
 
 select {
     margin: 20px 0;
-    width: 400px;
-    height: 30px;
-    border-radius: 4px;
-    border-width: 2px;
-    outline: none;
-    box-shadow: 5px 5px;
-    font-size: 1rem;
 }
 
-button {
-    font-size: 1.2rem;
-    letter-spacing: 1.2px;
-    width: 400px;
-    height: 35px;
-    margin: 50px 0;
+#container-spent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F5DEB3;
+    width: 500px;
+    height: auto;
+    border-radius: 4px;    
+}
+
+#container-spent div {
+    width: 90%;
+    margin: 70px 0 0 0;
+    letter-spacing: 1.2px; 
+    line-height: 35px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#container-spent span {
+    width: 100%; 
+    font-size: 1rem;   
+}
+
+#container-spent button {    
+    margin: 30px 0 50px 0;
+    width: 85%;
+}
+
+button {         
+    margin: 50px 0; 
+    background-color: #8A2BE2;  
+}
+
+input, select, button {
+    height: 40px;
+    width: 400px; 
     border-radius: 4px;
+    border-width: 2px;    
     box-shadow: 5px 5px;
-    background-color: #8A2BE2;    
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;     
 }
 
 button:hover {
@@ -93,12 +114,23 @@ button:hover {
         margin: 30px 0 0 0;
     }
 
+    h1 {
+        width: 85vw;
+        font-size: 1.6rem;
+    }
+
     input, select, button {
-        width: 80vw;
+        width: 85vw;
+        font-size: 1rem;
     }
 
     span {
         font-size: 1rem;
+        width: 85vw;
+    }
+
+    #container-spent {
+        width: 90vw;
     }
 }
 

@@ -16,17 +16,17 @@
     <div id="container">
         <div> 
             <span>{{ timeMessage }}</span>
-            <input id="time" type="number" placeholder="Ex: 60">
+            <input @keyup.enter="calculate" id="time" type="number" placeholder="Ex: 60">
         </div>
     
         <div> 
             <span>{{ consumptionMessage }}</span>
-            <input id="consumption" type="number" placeholder="Ex: 0,225">
+            <input @keyup.enter="calculate" id="consumption" type="number" placeholder="Ex: 0.225">
         </div>
     
         <div> 
             <span>{{ capacityMessage }}</span>
-            <select name="cars"  id="capacity">
+            <select id="capacity">
                 <option value="13">13 kg</option>
                 <option value="45">45 kg</option>         
             </select>
@@ -34,13 +34,9 @@
     
         <div> 
             <span>{{ priceMessage }}</span>
-            <input id="price" type="number" placeholder="Ex: 110">
-        </div>
-
-        <div>
-            <p id="spent"></p>
-        </div>
-
+            <input @keyup.enter="calculate" id="price" type="number" placeholder="Ex: 110.00">
+        </div> 
+      
         <button @click="calculate">{{ buttonMessage }}</button>
 
     </div>
