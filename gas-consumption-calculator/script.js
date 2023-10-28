@@ -1,9 +1,9 @@
 const app = Vue.createApp({
     data() {
       return {
-        headerMessage: "Calcule o seu consumo de gás em Real (R$)",
-        timeMessage: "Digite o tempo em minutos:", 
-        consumptionMessage: "Digite o consumo do queimador (ver no manual do fabricante do fogão):",
+        headerMessage: "Calcule o consumo de gás em Real (R$)",
+        timeMessage: "Digite o tempo de utilização em minutos:", 
+        consumptionMessage: "Digite o consumo do queimador em Kg/h (ver no manual do fabricante do fogão):",
         capacityMessage: "Selecione a capacidade do botijão (13kg ou 45 kg):",
         priceMessage: "Digite o preço do botijão de gás:", 
         buttonMessage: "Calcular",
@@ -17,6 +17,7 @@ const app = Vue.createApp({
 
         calculate(event) {             
             
+            const app = document.querySelector('#app')
             const time = document.querySelector('#time')
             const consumption = document.querySelector('#consumption')  
             const capacity = document.querySelector('#capacity')  
@@ -34,7 +35,7 @@ const app = Vue.createApp({
               const spent = document.createElement('div')
               const closeButton = document.createElement('button')
 
-              container.appendChild(containerSpent)
+              app.appendChild(containerSpent)
               containerSpent.appendChild(spent)
               containerSpent.appendChild(closeButton)
 
@@ -43,7 +44,7 @@ const app = Vue.createApp({
               closeButton.setAttribute('id', 'close-button')
               closeButton.setAttribute('alt', 'Fechar')           
               
-              closeButton.innerText = 'Fechar'
+              closeButton.innerText = 'Voltar'
 
               const closeBtn = document.querySelector('#close-button');              
 
@@ -55,7 +56,7 @@ const app = Vue.createApp({
               let spentResult = priceResult
               
               let totalConsumption = (this.consumptionValue / 60) *  this.timeValue  
-              let totalVolume = 13              
+              let totalVolume = this.capacityValue              
               let percentageConsumption = (totalConsumption / totalVolume) * 100;                
               let percentageRemaining = 100 - percentageConsumption              
               let remainingVolume = totalVolume - totalConsumption 
@@ -67,8 +68,13 @@ const app = Vue.createApp({
               if(this.consumptionValue >= 1.3) {
                 toFixedIndex = 2               
               }
+              
+              if(this.timeValue / 60 * this.consumptionValue > this.capacityValue) {
+                alert('Os valores inseridos excedem a capacidade maxima do botijão!  Certifique-se de que todos os valores estejam preenchidos corretamente')
+                window.location.reload()
+              }
 
-              spent.innerHTML = `<span>Em ${this.timeValue} minutos de uso gasta <br> aproximadamente R$ ${spentResult.toFixed(2)} Reais .</span><br>
+              spent.innerHTML = `<span>Em ${this.timeValue} minutos de uso gasta aproximadamente R$ ${spentResult.toFixed(2)} Reais .</span><br>
               <span>Total de gás consumido: ${totalConsumption.toFixed(2)} Kg/h .</span><br>
               <span>Utilizou aproximadamente ${percentageConsumption.toFixed(toFixedIndex)}% do volume total do botijão de gás.</span><br>
               <span>Restam aproximadamente ${percentageRemaining.toFixed(toFixedIndex)}% do volume total do botijão de gás.</span><br>
