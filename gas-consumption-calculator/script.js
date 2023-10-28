@@ -72,6 +72,7 @@ const app = Vue.createApp({
               if(this.timeValue / 60 * this.consumptionValue > this.capacityValue) {
                 alert('Os valores inseridos excedem a capacidade maxima do botijão!  Certifique-se de que todos os valores estejam preenchidos corretamente')
                 window.location.reload()
+                return
               }
 
               spent.innerHTML = `<span>Em ${this.timeValue} minutos de uso gasta aproximadamente R$ ${spentResult.toFixed(2)} Reais .</span><br>
