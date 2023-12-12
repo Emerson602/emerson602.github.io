@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div id="app">
+        
+        <header class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+            <h1>Lista de tarefas</h1>                      
+        </header>       
+
+        <form class="d-flex justify-content-center align-items-center p-3">
+            <div class="d-flex flex-row col-md-6">
+                <input v-model="taskInput"  @keypress.enter="addTasks" type="text" class="form-control text-center border-right-bottom-radius" maxlength="50" minlength="3" placeholder="Digite uma tarefa">
+                <button @click="addTasks" class="btn btn-success border-left-top-radius" type="button">Adicionar</button>
+            </div>
+        </form>
+       
+        <ul id="tasks" class="d-flex justify-content-start align-items-center flex-column mt-5 p-0">
+            <li v-for="(task, index) in tasksList" :key="index" class="mb-3">
+                <div class="d-flex justify-content-center align-items-center flex-row">   
+
+                    <span id="task" class="d-flex flex-column justify-content-center align-items-center bg-secondary text-light rounded-start-3 m-0 p-4 lh-2 text-center text-break" v-html="task">{{ task }}</span>                
+
+                    <button @click="removeTask(index)" id="remove-task" class="bg-danger text-light rounded-end-2 border-0 m-0 p-2"><img class="bg-danger" src="./icons/x-lg.svg"></button>
+
+                </div>
+            </li>
+        </ul>   
+       
+    </div>
+
+    <script src="./app.js"></script> 
+
+</body>
+</html>

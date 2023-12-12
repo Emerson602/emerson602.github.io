@@ -1,0 +1,72 @@
+
+:root {    
+    --white: #fff; 
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: var(--white);
+}
+
+#app {
+    background-color: var(--white);
+    padding: 30px 0 0 0;
+}
+
+.border-right-bottom-radius {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.border-left-top-radius {
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+
+ul {
+    overflow-y: scroll;
+    max-height: 600px;
+    margin: 0;   
+}
+
+ul::-webkit-scrollbar {
+    width: 0;
+}
+
+li {
+    list-style: none;
+}
+
+input, button {
+    outline: none;
+}
+
+#task {
+    width: 600px;        
+}
+
+#task, #remove-task {   
+    height: 150px;
+    padding: 0;
+}
+
+
+
+@media(max-width: 750px) {
+    #task {
+        width: 80vw;
+        font-size: 0.9rem;
+        padding: 0;
+    }
+
+    #task, #remove-task {   
+    height: 200px;
+    padding: 0;
+}
+}
+
+
+
+
