@@ -13,28 +13,36 @@
     <div id="app">
         
         <header class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-            <h1>Lista de tarefas</h1>                      
+            <h1>Lista de tarefas</h1>                                
         </header>       
 
         <form class="d-flex justify-content-center align-items-center p-3">
             <div class="d-flex flex-row col-md-6">
-                <input v-model="taskInput"  @keypress.enter="addTasks" type="text" class="form-control text-center border-right-bottom-radius" maxlength="50" minlength="3" placeholder="Digite uma tarefa">
+                <input v-model="taskInput"  @keypress.enter="addTasks" type="text" class="form-control text-center border-right-bottom-radius" maxlength="100" minlength="3" placeholder="Digite uma tarefa">
                 <button @click="addTasks" class="btn btn-success border-left-top-radius" type="button">Adicionar</button>
             </div>
         </form>
-       
+        
         <ul id="tasks" class="d-flex justify-content-start align-items-center flex-column mt-5 p-0">
             <li v-for="(task, index) in tasksList" :key="index" class="mb-3">
-                <div class="d-flex justify-content-center align-items-center flex-row">   
-
-                    <span id="task" class="d-flex flex-column justify-content-center align-items-center bg-secondary text-light rounded-start-3 m-0 p-4 lh-2 text-center text-break" v-html="task">{{ task }}</span>                
-
+                <div class="d-flex justify-content-flex-start align-items-flex-center flex-row">   
+                    <div id="task" class="d-flex flex-column justify-content-flex-start align-items-center bg-light text-dark rounded-start-3 m-0 p-4 lh-2 text-center text-break" v-html="task">{{ task }}</div>        
                     <button @click="removeTask(index)" id="remove-task" class="bg-danger text-light rounded-end-2 border-0 m-0 p-2"><img class="bg-danger" src="./icons/x-lg.svg"></button>
-
                 </div>
             </li>
-        </ul>   
-       
+        </ul>
+
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+        <div id="square"></div>
+      
     </div>
 
     <script src="./app.js"></script> 
