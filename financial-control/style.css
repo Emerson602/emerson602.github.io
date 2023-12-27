@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgba(147,112,219, 0.8), rgba(218,112,214, 0.8));      
+    background-image: linear-gradient(to bottom right, rgba(147,112,219, 1), rgba(218,112,214, 1));      
     background-repeat: no-repeat; 
     background-size: auto 150%; 
 }
