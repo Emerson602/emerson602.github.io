@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+}
+
+:root {    
+    --LightSkyBlue: #B0C4DE; 
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #8A2BE2, #DDA0DD); 
+}
+
+#app {
+    width: 750px;    
+    margin: auto;
+    height: 100vh;
+}
+
+@media(max-width: 780px) {
+    #app {
+        width: 100%;
+    }
+}
+
+input, select {
+    outline: none;
+}
+

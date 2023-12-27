@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    
+    <div id="app" class="d-flex flex-column text-center p-2 pt-5 p-sm-5">
+       <header v-if="!showForm">
+
+            <h1>Controle financeiro</h1>
+            <div class="d-flex flex-column m-2 mt-5 p-3 p-sm-2 rounded col-7 col-sm-5">
+                <span class="text-start text-sm-center">Saldo atual</span>
+                <span class="text-start fs-5 text-sm-center">R$ 4000000</span>
+            </div>
+
+            <button @click="toggleForm" id="transaction" class="col-10 col-md-6 mt-5 p-2 rounded border-0 bg-warning text-dark"> Transação </button>       
+            
+ 
+            <div class="d-flex align-items-center justify-content-center mt-3">
+
+                <div class="bg-light m-1 m-sm-4 p-3 rounded col-5"> 
+                    <span>Receitas</span>
+                    <span  class="d-block text-success">12000</span>
+                </div>                
+
+                <div class="bg-light m-1 m-sm-4 p-3 rounded col-5">
+                    <span>Despesas</span>
+                    <span  class="d-block text-danger">1200</span>
+                </div>
+
+            </div>
+
+       </header>
+
+       <main v-if="!showForm">
+            <div class="mt-5">
+                
+                <span>Transações</span>
+
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+
+            </div>           
+       </main>
+
+       <div v-if="showForm" id="transaction-form" class="d-flex flex-column align-items-center mt-5">
+
+        <h2 class="mb-5">Realizar uma transação</h2>
+
+            <span>Nome da transação</span>
+            <input class="col-12 col-md-6 rounded border-0 text-center  m-2" maxlength="30">
+
+            <label for="tipo">Escolha o tipo de transação</label>
+            <select name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
+                <option value="">Receita</option>
+                <option value="">Despesa</option> 
+            </select>
+
+            <span>Valor</span>
+            <input class="col-12 col-md-6 rounded border-0 text-center m-2" maxlength="10"> 
+
+            <button class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-success text-dark">Concluir</button>
+            <button @click="toggleForm" id="transaction" class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-danger text-dark"> Cancelar </button>
+
+        </div>
+
+    </div>    
+
+    <script src="./app.js"></script> 
+</body>
+</html>
