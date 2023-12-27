@@ -20,13 +20,36 @@ body {
     height: 100vh;
 }
 
-@media(max-width: 780px) {
-    #app {
-        width: 100%;
-    }
+#logo {
+    width: 120px;
+    height: auto;
 }
 
 input, select {
     outline: none;
+}
+#transactions-list {    
+    height: 50vh;
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+@media(max-width: 768px) {
+    #app {
+        width: 100%;
+    }
+
+    #logo {
+        width: 100px;
+        height: auto;
+    }
+
+    #transactions-list {
+        height: 60vh;
+    }
 }
 
