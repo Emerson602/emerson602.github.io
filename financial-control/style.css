@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;        
 }
 
 :root {    
@@ -9,7 +9,9 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom right, #8A2BE2, #DDA0DD); 
+    background-image: linear-gradient(to bottom right, #8A2BE2, #DDA0DD);      
+    background-repeat: no-repeat; 
+    background-size: auto 1400px; 
 }
 
 #app {

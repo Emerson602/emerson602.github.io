@@ -14,13 +14,13 @@
     <div id="app" class="d-flex flex-column text-center p-2 pt-5 p-sm-5">
        <header v-if="!showForm">
 
-            <h1>Controle financeiro</h1>
+            <h1 class="mt-5">Controle financeiro</h1>
             <div class="d-flex flex-column m-2 mt-5 p-3 p-sm-2 rounded col-7 col-sm-5">
                 <span class="text-start text-sm-center">Saldo atual</span>
                 <span class="text-start fs-5 text-sm-center">R$ 4000000</span>
             </div>
 
-            <button @click="toggleForm" id="transaction" class="col-10 col-md-6 mt-5 p-2 rounded border-0 bg-warning text-dark"> Transação </button>       
+            <button @click="toggleForm" id="transaction" class="col-10 col-md-6 mt-3 p-2 rounded border-0 bg-warning text-dark"> Transação </button>       
             
  
             <div class="d-flex align-items-center justify-content-center mt-3">
@@ -42,12 +42,48 @@
        <main v-if="!showForm">
             <div class="mt-5">
                 
-                <span>Transações</span>
+                <h2 class="mb-5">Transações:</h2>
 
                 <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
                     <span>Salario</span>                    
                     <span>R$ 4000</span>
                 </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                    <span>Salario</span>                    
+                    <span>R$ 4000</span>
+                </div>  
 
             </div>           
        </main>
@@ -68,8 +104,16 @@
             <span>Valor</span>
             <input class="col-12 col-md-6 rounded border-0 text-center m-2" maxlength="10"> 
 
-            <button class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-success text-dark">Concluir</button>
-            <button @click="toggleForm" id="transaction" class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-danger text-dark"> Cancelar </button>
+            <button class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-success text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022"/>
+                </svg>
+            </button>
+            <button @click="toggleForm" id="transaction" class="col-12 col-md-6 mt-3 p-2 rounded border-0 bg-danger text-dark"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
 
         </div>
 
