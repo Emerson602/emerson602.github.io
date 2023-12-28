@@ -4,13 +4,14 @@ const app = {
             transactionInput: '',
             showForm: false,
             showHistoric: false,
-            transactionDescription: document.querySelector('#transaction-description'),
-            transactionType: document.querySelector('#transaction-type'),
-            transactionValue: document.querySelector('#transaction-value'),   
+            descriptionInput: '', 
+            typeInput: '',
+            valueInput: '',
             transactionList: [],
             dateTime: '', 
-            financialIncome: '',
-            financialExpenses: '', 
+            financialIncome: localStorage.getItem("financialIncome") || 0,
+            financialExpenses: localStorage.getItem("financialExpenses") || 0, 
+            amount: '',
         }
     },
     methods: {
@@ -47,17 +48,34 @@ const app = {
             }    */
         
         },  
-        newTransaction() {
+        newTransaction() {         
 
-            let description = this.transactionDescription.value;
-            let type = this.transactionType.value;
-            let value = this.transactionValue.value;
+            if(this.descriptionInput !== '' && this.typeInput === 'receita' && this.valueInput !== '' && !isNaN(this.valueInput)) {
+                this.financialIncome += parseInt(this.valueInput)
+                this.currentBalance()           
+                this.toggleForm()                
+                return
+            }
 
-            this.toggleForm()             
-        },           
+            if(this.descriptionInput !== '' && this.typeInput === 'despesa' && this.valueInput !== '' && !isNaN(this.valueInput)) {
+                this.financialExpenses += parseInt(this.valueInput)
+                this.currentBalance()           
+                this.toggleForm()                
+                return
+            }
+
+            alert('Preencha todos os campos corretamente!')
+ 
+        },       
+        currentBalance() {                         
+            localStorage.setItem("financialIncome", this.financialIncome);
+            localStorage.setItem("financialExpenses", this.financialExpenses);             
+            this.amount = this.financialIncome - this.financialExpenses;           
+        }           
     },
     mounted() {
        this.getCurrentDateTime()
+       this.currentBalance()
     }
 }
 
