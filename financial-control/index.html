@@ -45,52 +45,41 @@
        <main v-if="showHistoric">
             <div class="mt-5">
                 
-                <h2 class="mb-5">Transações:</h2>
-                <ul id="transactions-list" class="p-0 rounded">
-
-                    <li id="transaction" class="d-flex flex-row justify-content-between align-items-center bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
-                        <span>Salario</span>                    
-                        <span>R$ 4000</span>
-                    </li>           
-
-                    
+                <h2 class="mb-5">Historico de transações:</h2>
+                <ul id="transactions-list" class="p-0 rounded">   
+                    <li id="transaction" class="bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
+                         
+                        <span id="data" class="text-center">28 de dezembro de 2023 às 12:33</span>                         
+                        <span class="mt-2 text-start d-block">Descrição: <br>13° Salario</span>
+                        <span class="mt-2 text-start d-block">Tipo: Entrada</span>                
+                        <span class="text-start d-block">Valor: R$ 4000</span>                        
+                                              
+                     </li>
                 </ul>                 
                 
             </div>    
             
-            <button @click="toggleHistoric" id="transaction" class="col-12 col-md-6 mt-3 mb-5 p-2 rounded border-0 bg-warning text-dark"> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
-                </svg>
-            </button>          
+            <button @click="toggleHistoric" class="col-12 col-md-6 mt-3 mb-5 p-2 rounded border-0 bg-warning text-dark"> Voltar </button>          
        </main>
      
        <div v-if="showForm" id="transaction-form" class="d-flex flex-column align-items-center mt-5">
 
-        <h2 class="mb-5">Realizar uma transação</h2>
+        <h2 class="mb-5">Nova transação</h2>
 
             <span>Nome da transação</span>
-            <input class="col-12 col-md-6 rounded border-0 text-center  m-2" maxlength="30">
+            <input id="transaction-description" class="col-12 col-md-6 rounded border-0 text-center  m-2" maxlength="30">
 
             <label for="tipo">Escolha o tipo de transação</label>
-            <select name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
-                <option value="">Receita</option>
-                <option value="">Despesa</option> 
+            <select id="transaction-type" name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
+                <option value="Receita">Receita</option>
+                <option value="Despesa">Despesa</option> 
             </select>
 
             <span>Valor</span>
-            <input class="col-12 col-md-6 rounded border-0 text-center m-2" maxlength="10"> 
+            <input id="transaction-value" class="col-12 col-md-6 rounded border-0 text-center m-2" maxlength="10"> 
 
-            <button class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-success text-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022"/>
-                </svg>
-            </button>
-            <button @click="toggleForm" id="transaction" class="col-12 col-md-6 mt-3 p-2 rounded border-0 bg-danger text-dark"> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg>
-            </button>
+            <button @click="newTransaction" id="create-transaction" class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-warning text-dark">Concluir</button>
+            <button @click="toggleForm" class="col-12 col-md-6 mt-3 p-2 rounded border-0 bg-warning text-dark">Cancelar</button>
 
         </div>
 

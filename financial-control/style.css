@@ -27,11 +27,17 @@ body {
 
 input, select {
     outline: none;
+    height: 40px;
 }
+
 #transactions-list {    
     height: 50vh;
     overflow-x: hidden; 
     overflow-y: scroll; 
+}
+
+#data {
+    font-size: 0.8rem;
 }
 
 ::-webkit-scrollbar {
