@@ -38,7 +38,7 @@
        </header>
        
        <div id="controls" class="d-inline"  v-if="!showForm && !showHistoric">
-            <button @click="toggleForm" class="col-10 col-md-6 mt-5 m-2 p-2 rounded border-0 bg-warning text-dark"> Efetuar uma transação </button> 
+            <button @click="toggleForm" class="col-10 col-md-6 mt-5 m-2 p-2 rounded border-0 bg-warning text-dark"> Fazer uma transação </button> 
             <button @click="toggleHistoric" class="col-10 col-md-6 m-2 p-2 rounded border-0 bg-warning text-dark"> Historico de transações </button>      
        </div>
 
@@ -50,9 +50,9 @@
                     <li id="transaction" class="bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
                          
                         <span id="data" class="text-center">28 de dezembro de 2023 às 12:33</span>                         
-                        <span class="mt-2 text-start d-block">Descrição: <br>13° Salario</span>
-                        <span class="mt-2 text-start d-block">Tipo: Entrada</span>                
-                        <span class="text-start d-block">Valor: R$ 4000</span>                        
+                        <span class="mt-2 text-start text-sm-center d-block">Descrição: <br>13° Salario</span>
+                        <span class="mt-2 text-start text-sm-center d-block">Tipo: Entrada</span>                
+                        <span class="text-start text-sm-center d-block">Valor: R$ 4000</span>                        
                                               
                      </li>
                 </ul>                 
@@ -66,16 +66,16 @@
 
         <h2 class="mb-5">Nova transação</h2>
 
-            <span>Nome da transação</span>
+            <span>Descrição da transação</span>
             <input id="transaction-description" class="col-12 col-md-6 rounded border-0 text-center  m-2" maxlength="30">
 
-            <label for="tipo">Escolha o tipo de transação</label>
+            <label for="tipo">Tipo da transação</label>
             <select id="transaction-type" name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
                 <option value="Receita">Receita</option>
                 <option value="Despesa">Despesa</option> 
             </select>
 
-            <span>Valor</span>
+            <span>Valor da transação</span>
             <input id="transaction-value" class="col-12 col-md-6 rounded border-0 text-center m-2" maxlength="10"> 
 
             <button @click="newTransaction" id="create-transaction" class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-warning text-dark">Concluir</button>
