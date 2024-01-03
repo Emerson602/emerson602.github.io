@@ -11,21 +11,25 @@ const app = {
             dateTime: '', 
             financialIncome: localStorage.getItem("financialIncome") || 0,
             financialExpenses: localStorage.getItem("financialExpenses") || 0, 
-            amount: '',
+            amount: parseInt(),
+            currentDateTime: new Date(),                  
         }
     },
     methods: {
 
         getCurrentDateTime() {
-            setInterval(() => {
-                  const currentDateTime = new Date();
-                  const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
-                  const formattedDateTime = currentDateTime.toLocaleDateString('pt-BR', options);
+            setInterval(() => {                  
+                  const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};                  
+                  const formattedDateTime = this.currentDateTime.toLocaleDateString('pt-BR', options);                                         
                   localStorage.setItem("DateTime", formattedDateTime);
-                  this.dataTime = localStorage.getItem("DateTime") 
-                  console.log(this.dateTime)                
-            }, 1000) 
+                  this.dataTime = localStorage.getItem("DateTime")                                 
+            }, 10000) 
          }, 
+        setCurrentYear() {            
+            const footer = document.querySelector('#footer');   
+            
+            footer.innerText = `Financial control © - ${this.currentDateTime.getFullYear()}`
+        },
         toggleForm() {
             this.showForm = !this.showForm;
           },
@@ -50,17 +54,19 @@ const app = {
         },  
         newTransaction() {         
 
-            if(this.descriptionInput !== '' && this.typeInput === 'receita' && this.valueInput !== '' && !isNaN(this.valueInput)) {
-                this.financialIncome += parseInt(this.valueInput)
-                this.currentBalance()           
-                this.toggleForm()                
-                return
+            if(this.descriptionInput !== '' && this.typeInput === 'income' && this.valueInput !== '' && !isNaN(this.valueInput)) {               
+                this.financialIncome += parseInt(this.valueInput)               
+                this.toggleForm() 
+                this.reload() 
+                this.currentBalance()                  
+                return              
             }
 
-            if(this.descriptionInput !== '' && this.typeInput === 'despesa' && this.valueInput !== '' && !isNaN(this.valueInput)) {
+            if(this.descriptionInput !== '' && this.typeInput === 'expense' && this.valueInput !== '' && !isNaN(this.valueInput)) {                
                 this.financialExpenses += parseInt(this.valueInput)
-                this.currentBalance()           
-                this.toggleForm()                
+                this.toggleForm()
+                this.reload()  
+                this.currentBalance()                    
                 return
             }
 
@@ -69,13 +75,39 @@ const app = {
         },       
         currentBalance() {                         
             localStorage.setItem("financialIncome", this.financialIncome);
-            localStorage.setItem("financialExpenses", this.financialExpenses);             
-            this.amount = this.financialIncome - this.financialExpenses;           
+            localStorage.setItem("financialExpenses", this.financialExpenses);
+
+            this.financialIncome = parseInt(localStorage.getItem("financialIncome"));
+            this.financialExpenses = parseInt(localStorage.getItem("financialExpenses"));  
+        
+            this.amount = this.financialIncome - this.financialExpenses;          
+
+        },
+        showCurrentBalance() {
+            const currentBalance = document.querySelector('#current-balance');
+            const financialIncome = document.querySelector('#financial-income');
+            const financialExpenses = document.querySelector('#financial-expenses');
+
+            let amountString = this.amount;
+            let financialExpensesString = this.financialExpenses;
+            let financialIncomeString = this.financialIncome
+
+            currentBalance.textContent = `R$ ${amountString}`;            
+            financialIncome.textContent = `R$ ${financialIncomeString}`;
+            financialExpenses.textContent = `R$ ${financialExpensesString}`;
+        },
+        reload() {
+            setTimeout(() => {
+                location.reload()
+            }, 1000); 
         }           
     },
     mounted() {
        this.getCurrentDateTime()
+       this.setCurrentYear()
        this.currentBalance()
+       this.showCurrentBalance()        
+       //localStorage.clear()     
     }
 }
 
