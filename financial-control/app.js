@@ -33,6 +33,10 @@ const app = {
         toggleForm() {
             this.showForm = !this.showForm;
           },
+        closeForm() {
+            this.toggleForm()
+            this.reload()
+        },  
         toggleHistoric() {
             this.showHistoric = !this.showHistoric;
           },

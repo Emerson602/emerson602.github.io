@@ -59,8 +59,14 @@ input, select {
     }
 }
 
+@media(max-width: 300px) {
+    #financial-income, #financial-expenses {
+        font-size: 0.9rem;
+    }
+}
+
 #footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     text-align: center;
     width: 100%;    
