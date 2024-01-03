@@ -61,7 +61,7 @@
                 
             </div>    
             
-            <button @click="toggleHistoric" class="col-12 col-md-6 mt-3 mb-5 p-2 rounded border-0 bg-warning text-dark"> Voltar </button>          
+            <button @click="closeHistoric" class="col-12 col-md-6 mt-3 mb-5 p-2 rounded border-0 bg-warning text-dark"> Voltar </button>          
        </main>
      
        <div v-if="showForm" id="transaction-form" class="d-flex flex-column align-items-center mt-5">
@@ -74,8 +74,8 @@
             <label for="tipo">Tipo da transação</label>
             <select  v-model="typeInput" id="transaction-type" name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
                 <option selected>Selecione o tipo</option>
-                <option value="income">Receita</option>
-                <option value="expense">Despesa</option> 
+                <option value="Receita">Receita</option>
+                <option value="Despesa">Despesa</option> 
             </select>
 
             <span>Valor da transação</span>
