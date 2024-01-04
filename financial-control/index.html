@@ -48,15 +48,12 @@
             <div class="mt-5">
                 
                 <h2 class="mb-5">Historico de transações:</h2>
-                <ul id="transactions-list" class="p-0 rounded">   
-                    <li id="transaction" class="bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2">
-                         
-                        <span id="data" class="text-center">28 de dezembro de 2023 às 12:33</span>                         
-                        <span class="mt-2 text-start text-sm-center d-block">Descrição: <br>13° Salario</span>
-                        <span class="mt-2 text-start text-sm-center d-block">Tipo: Entrada</span>                
-                        <span class="text-start text-sm-center d-block">Valor: R$ 4000</span>                        
-                                              
-                     </li>
+                
+                
+                <ul id="transactions-list" class="p-0 rounded">
+                    <li id="transaction" v-for="(transaction, index) in transactionList" :key="index" class="bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2" v-html="transaction">
+                        {{ transaction }}
+                    </li>
                 </ul>                 
                 
             </div>    
