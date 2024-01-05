@@ -51,7 +51,7 @@
                 
                 
                 <ul id="transactions-list" class="p-0 rounded">
-                    <li id="transaction" v-for="(transaction, index) in transactionList" :key="index" class="bg-light p-3 border border-success border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2" v-html="transaction">
+                    <li id="transaction" v-for="(transaction, index) in transactionList" :key="index" v-html="transaction">
                         {{ transaction }}
                     </li>
                 </ul>                 
