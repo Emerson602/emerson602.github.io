@@ -12,12 +12,14 @@ body {
     background-image: linear-gradient(to bottom right, rgba(147,112,219, 1), rgba(218,112,214, 1));      
     background-repeat: no-repeat; 
     background-size: auto 150%; 
+    
 }
 
 #app {
     width: 750px;    
     margin: auto;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 #logo {
@@ -30,8 +32,19 @@ input, select {
     height: 40px;
 }
 
-#transactions-list {    
-    height: 50vh;
+#homeButton {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;        
+}
+
+#transactions-list { 
+    height: auto;   
+    max-height: 1500px;    
     overflow-x: hidden; 
     overflow-y: scroll; 
 }
@@ -52,10 +65,6 @@ input, select {
     #logo {
         width: 100px;
         height: auto;
-    }
-
-    #transactions-list {
-        height: 60vh;
     }
 }
 

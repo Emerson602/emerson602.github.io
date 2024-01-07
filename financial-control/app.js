@@ -1,10 +1,9 @@
 const app = {
     data() {
         return {
-            transactionInput: '',
-            showForm: false,
-            showHistoric: false,
-            descriptionInput: '', 
+            transactionInput: '',                        
+            descriptionInput: '',
+            homeButton: false, 
             typeInput: '',
             valueInput: '',
             transactionList: [],
@@ -33,25 +32,33 @@ const app = {
             
             footer.innerText = `Financial control © - ${this.currentDateTime.getFullYear()}`
         },
-        toggleForm() {
-            this.showForm = !this.showForm;          
-          },
-        closeForm() {
-            this.toggleForm()
-            this.reload()
-        },  
-        toggleHistoric() {
-            this.showHistoric = !this.showHistoric;                                     
+        scrollToHome() {
+            const home = document.querySelector('#app')
+            home.scrollIntoView({ behavior: 'smooth' });
         },
-        closeHistoric() {
-            this.toggleHistoric()
-            this.reload()
+        scrollToForm() {
+            const form = document.querySelector('#transaction-form')
+            form.scrollIntoView({ behavior: 'smooth' });
+            this.showHomeButton()
         },
-        
+        scrollToHistoric() {
+            const historic = document.querySelector('#historic')
+            historic.scrollIntoView({ behavior: 'smooth' });
+            this.showHomeButton()
+        },
+        checkTransaction() {
+            if(this.numberTransaction <= 0) {
+                this.noTransaction = !this.noTransaction; 
+            } 
+        },    
+        showHomeButton() {
+            this.homeButton = !this.homeButton;
+        },   
         getTransactionHistory() {
-           this.transactionList = [];
+           this.transactionList = [];           
 
             let count = 0;
+
             for (let i = 0; i < this.numberTransaction; i++) {
                 count += 1;
                  
@@ -79,8 +86,8 @@ const app = {
                     
                   </div>                                             
                 `);                
-            }    
-        
+            }  
+
         }, 
         setColor() {            
             if(this.historyType === 'Despesa') {
@@ -97,8 +104,9 @@ const app = {
             if(this.descriptionInput !== '' && this.typeInput === 'Receita' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {   
                 this.financialIncome += parseInt(this.valueInput)
                 
-                this.storeData()
-                this.toggleForm() 
+                this.storeData() 
+                this.scrollToHome() 
+                this.checkTransaction()              
                 this.reload() 
                 this.currentBalance()                                  
                 return        
@@ -107,8 +115,9 @@ const app = {
             if(this.descriptionInput !== '' && this.typeInput === 'Despesa' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {  
                 this.financialExpenses += parseInt(this.valueInput)
 
-                this.storeData()
-                this.toggleForm()
+                this.storeData() 
+                this.scrollToHome() 
+                this.checkTransaction()              
                 this.reload()  
                 this.currentBalance()                    
                 return
@@ -166,11 +175,12 @@ const app = {
         reload() {
             setTimeout(() => {
                 location.reload()
-            }, 200); 
+            }, 1000); 
         },              
     },
     mounted() {       
        this.getCurrentDateTime()
+       this.checkTransaction()
        this.setCurrentYear()
        this.getTransactionHistory()
        this.currentBalance()

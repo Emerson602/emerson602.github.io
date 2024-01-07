@@ -13,7 +13,8 @@
 <body>
     
     <div id="app" class="d-flex flex-column text-center p-2 pt-5 p-sm-5">
-       <header v-if="!showForm && !showHistoric">
+
+       <header>
             <img id="logo" class="mt-2" src="./img/logo.webp">
             <h1 class="mt-3">Controle financeiro</h1>
             <div class="d-flex flex-column m-2 mt-3 mt-sm-5 p-3 p-sm-2 rounded col-7 col-sm-5">
@@ -34,58 +35,62 @@
                     <span id="financial-expenses" class="d-block text-danger"></span>
                 </div>
 
-            </div>            
+            </div> 
+            
+            <div id="controls" class="d-inline mb-5">
+                <button @click="scrollToForm" class="col-10 col-md-6 mt-5 m-2 p-2 rounded border-0 bg-warning text-dark"> Fazer uma transação </button> 
+                <button @click="scrollToHistoric" class="col-10 col-md-6 m-2 p-2 rounded border-0 bg-warning text-dark"> Historico de transações </button>      
+            </div>
 
-       </header>    
+       </header>     
 
-       
-       <div id="controls" class="d-inline"  v-if="!showForm && !showHistoric">
-            <button @click="toggleForm" class="col-10 col-md-6 mt-5 m-2 p-2 rounded border-0 bg-warning text-dark"> Fazer uma transação </button> 
-            <button @click="toggleHistoric" class="col-10 col-md-6 m-2 p-2 rounded border-0 bg-warning text-dark"> Historico de transações </button>      
-       </div>
 
-       <main v-if="showHistoric">
-            <div class="mt-5">
+       <main class="mt-5">
+
+            <button @click="scrollToHome" v-if="homeButton" id="homeButton" class="bg-warning border-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+              </svg>
+            </button>
+
+            <div id="transaction-form" class="d-flex flex-column align-items-center mt-5">
+
+                <h2 class="mb-5">Nova transação</h2>
+        
+                <span>Descrição da transação</span>
+                <input v-model="descriptionInput" id="transaction-description" class="col-12 col-md-6 rounded border-0 text-center  m-2" autocomplete="off" maxlength="30">
+    
+                <label for="tipo">Tipo da transação</label>
+                <select  v-model="typeInput" id="transaction-type" name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
+                    <option selected>Selecione o tipo</option>
+                    <option value="Receita">Receita</option>
+                    <option value="Despesa">Despesa</option> 
+                </select>
+    
+                <span>Valor da transação</span>
+                <input  v-model="valueInput" type="number" id="transaction-value" class="col-12 col-md-6 rounded border-0 text-center m-2" autocomplete="off" maxlength="10"> 
+    
+                <button @click="newTransaction" id="create-transaction" class="col-12 col-md-6 mt-5 mb-5 p-2 rounded border-0 bg-warning text-dark">Concluir</button>           
+        
+            </div>
+            
+            <div  id="historic" class="mt-5">
                 
-                <h2 class="mb-5">Historico de transações:</h2>
-                
-                
+                <h2 class="mb-5">Historico de transações:</h2>                
+                <span v-if="noTransaction" class="bg-light p-3 rounded">Você não possui transações!</span>
                 <ul id="transactions-list" class="p-0 rounded">
-                    <li id="transaction" v-for="(transaction, index) in transactionList" :key="index" v-html="transaction">
-                        {{ transaction }}
-                    </li>
+                    <li id="transaction" v-for="(transaction, index) in transactionList" :key="index" v-html="transaction">{{ transaction }}</li>
                 </ul>                 
                 
-            </div>    
-            
-            <button @click="closeHistoric" class="col-12 col-md-6 mt-3 mb-5 p-2 rounded border-0 bg-warning text-dark"> Voltar </button>          
+            </div>                
+                
        </main>
      
-       <div v-if="showForm" id="transaction-form" class="d-flex flex-column align-items-center mt-5">
 
-        <h2 class="mb-5">Nova transação</h2>
-
-            <span>Descrição da transação</span>
-            <input v-model="descriptionInput" id="transaction-description" class="col-12 col-md-6 rounded border-0 text-center  m-2" autocomplete="off" maxlength="30">
-
-            <label for="tipo">Tipo da transação</label>
-            <select  v-model="typeInput" id="transaction-type" name="tipo" class="col-12 col-md-6  text-center rounded border-0  m-2">
-                <option selected>Selecione o tipo</option>
-                <option value="Receita">Receita</option>
-                <option value="Despesa">Despesa</option> 
-            </select>
-
-            <span>Valor da transação</span>
-            <input  v-model="valueInput" type="number" id="transaction-value" class="col-12 col-md-6 rounded border-0 text-center m-2" autocomplete="off" maxlength="10"> 
-
-            <button @click="newTransaction" id="create-transaction" class="col-12 col-md-6 mt-5 p-2 rounded border-0 bg-warning text-dark">Criar</button>
-            <button @click="closeForm" class="col-12 col-md-6 mt-3 p-2 rounded border-0 bg-warning text-dark">Cancelar</button>
-
-        </div>
 
     </div>   
 
-    <footer id="footer" class="text-center mt-5"></footer>
+    <footer id="footer" class="text-center mt-5 mb-1"></footer>
 
     <script type="text/javascript" src="./app.js"></script> 
     
