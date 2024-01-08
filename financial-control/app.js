@@ -102,28 +102,21 @@ const app = {
         newTransaction() {         
 
             if(this.descriptionInput !== '' && this.typeInput === 'Receita' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {   
-                this.financialIncome += parseInt(this.valueInput)
+                this.financialIncome += parseInt(this.valueInput)             
+                                          
+            } else if(this.descriptionInput !== '' && this.typeInput === 'Despesa' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {  
+                this.financialExpenses += parseInt(this.valueInput)                   
                 
-                this.storeData() 
-                this.scrollToHome() 
-                this.checkTransaction()              
-                this.reload() 
-                this.currentBalance()                                  
-                return        
-            }
-            
-            if(this.descriptionInput !== '' && this.typeInput === 'Despesa' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {  
-                this.financialExpenses += parseInt(this.valueInput)
-
-                this.storeData() 
-                this.scrollToHome() 
-                this.checkTransaction()              
-                this.reload()  
-                this.currentBalance()                    
+            } else {
+                alert('Preencha todos os campos corretamente!')
                 return
             }
 
-            alert('Preencha todos os campos corretamente!')
+            this.storeData() 
+            this.scrollToHome() 
+            this.checkTransaction()              
+            this.reload()  
+            this.currentBalance()              
  
         },         
         storeData() {
