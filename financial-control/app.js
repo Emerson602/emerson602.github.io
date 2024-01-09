@@ -14,7 +14,8 @@ const app = {
             currentDateTime: new Date(), 
             numberTransaction: parseInt(localStorage.getItem("number-transaction") || 0),  
             applyColor: 'success',
-            historyType: ''                                           
+            historyType: '', 
+            headerVisible: false,                                          
         }
     },
     methods: {
@@ -34,17 +35,21 @@ const app = {
         },
         scrollToHome() {
             const home = document.querySelector('#app')
-            home.scrollIntoView({ behavior: 'smooth' });
+            home.scrollIntoView({ behavior: 'smooth' });       
         },
         scrollToForm() {
             const form = document.querySelector('#transaction-form')
-            form.scrollIntoView({ behavior: 'smooth' });
-            this.showHomeButton()
+            form.scrollIntoView({ behavior: 'smooth' });    
+
+            this.homeButton = false
+            this.showHomeButton()                         
         },
         scrollToHistoric() {
             const historic = document.querySelector('#historic')
             historic.scrollIntoView({ behavior: 'smooth' });
-            this.showHomeButton()
+
+            this.homeButton = false
+            this.showHomeButton()       
         },
         checkTransaction() {
             if(this.numberTransaction <= 0) {
@@ -53,7 +58,22 @@ const app = {
         },    
         showHomeButton() {
             this.homeButton = !this.homeButton;
-        },   
+        },
+        handleHeaderIntersection(entries) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {               
+                this.headerVisible = true;
+                this.handleHeaderVisibility();
+              } else {                
+                this.headerVisible = false;                
+              }
+            });
+
+          },
+          handleHeaderVisibility() {
+            this.homeButton = true
+            this.showHomeButton()
+          },           
         getTransactionHistory() {
            this.transactionList = [];           
 
@@ -177,7 +197,17 @@ const app = {
        this.setCurrentYear()
        this.getTransactionHistory()
        this.currentBalance()
-       this.showCurrentBalance()     
+       this.showCurrentBalance()  
+       
+       const headerElement = this.$refs.headerElement;
+
+       const observer = new IntersectionObserver(this.handleHeaderIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1.0, 
+      });
+
+        observer.observe(headerElement);
     }
 }
 
