@@ -15,51 +15,74 @@ const app = {
             numberTransaction: parseInt(localStorage.getItem("number-transaction") || 0),  
             applyColor: 'success',
             historyType: '', 
-            headerVisible: false,                                          
+            headerVisible: false,   
+            showModal: false,                                       
         }
     },
     methods: {
 
         getCurrentDateTime() {
+
             setInterval(() => {                  
                   const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};                  
                   const formattedDateTime = this.currentDateTime.toLocaleDateString('pt-BR', options);                                         
                   localStorage.setItem("dateTime", formattedDateTime);
-                  this.dateTime = localStorage.getItem("dateTime")                                 
+                  this.dateTime = localStorage.getItem("dateTime")                               
             }, 1000) 
+
          }, 
-        setCurrentYear() {            
+
+        setCurrentYear() {         
+
             const footer = document.querySelector('#footer');   
             
             footer.innerText = `Financial control © - ${this.currentDateTime.getFullYear()}`
+
         },
+
         scrollToHome() {
+
             const home = document.querySelector('#app')
-            home.scrollIntoView({ behavior: 'smooth' });       
+            home.scrollIntoView({ behavior: 'smooth' });     
+
         },
+
         scrollToForm() {
+
             const form = document.querySelector('#transaction-form')
             form.scrollIntoView({ behavior: 'smooth' });    
 
             this.homeButton = false
-            this.showHomeButton()                         
+            this.showHomeButton()    
+
         },
+
         scrollToHistoric() {
+
             const historic = document.querySelector('#historic')
             historic.scrollIntoView({ behavior: 'smooth' });
 
             this.homeButton = false
-            this.showHomeButton()       
+            this.showHomeButton()   
+
         },
+
         checkTransaction() {
+
             if(this.numberTransaction <= 0) {
                 this.noTransaction = !this.noTransaction; 
             } 
-        },    
+
+        }, 
+
         showHomeButton() {
+
             this.homeButton = !this.homeButton;
+
         },
+
         handleHeaderIntersection(entries) {
+
             entries.forEach(entry => {
               if (entry.isIntersecting) {               
                 this.headerVisible = true;
@@ -70,11 +93,16 @@ const app = {
             });
 
           },
+
           handleHeaderVisibility() {
+
             this.homeButton = true
             this.showHomeButton()
-          },           
+
+          },     
+
         getTransactionHistory() {
+
            this.transactionList = [];           
 
             let count = 0;
@@ -86,7 +114,18 @@ const app = {
                 const transactionDescription = localStorage.getItem(`transaction-description-${count}`, this.descriptionInput);
                 const transactionType = localStorage.getItem(`transaction-type-${count}`, this.typeInput);
                 const transactionValue = localStorage.getItem(`transaction-value-${count}`, this.valueInput);              
-                
+               
+               // inicio 
+               
+                let newString = transactionDate.split(" ");
+                let index = count;
+                let day = newString[0];
+                let month = newString[2];
+                let year = newString[4];
+                let hour = newString[6];                
+                console.log(`${index}: ${day} ${month} ${year} ${hour}`)
+              
+               // final
                 this.historyType = transactionType;
 
                 this.setColor();
@@ -109,7 +148,9 @@ const app = {
             }  
 
         }, 
-        setColor() {            
+
+        setColor() {   
+
             if(this.historyType === 'Despesa') {
                 this.applyColor = 'danger'               
                 return
@@ -118,7 +159,9 @@ const app = {
             if(this.historyType === 'Receita'){
                 this.applyColor = 'success'
             }
+
         },
+
         newTransaction() {         
 
             if(this.descriptionInput !== '' && this.typeInput === 'Receita' && this.valueInput !== '' && this.valueInput > 0 && !isNaN(this.valueInput)) {   
@@ -132,14 +175,29 @@ const app = {
                 return
             }
 
-            this.storeData() 
-            this.scrollToHome() 
-            this.checkTransaction()              
-            this.reload()  
-            this.currentBalance()              
+            this.storeData()              
+            this.checkTransaction()        
+            this.currentBalance()
+            this.scrollToHome()
+            this.openModal()                      
  
-        },         
+        }, 
+        
+        openModal() {
+        
+            this.showModal = true; 
+
+        },
+
+        closeModal() { 
+
+            this.showModal = false;                   
+            this.reload()
+
+        },
+
         storeData() {
+
                 this.numberTransaction += 1;
                     
                 localStorage.setItem(`transaction-date-${this.numberTransaction}`, this.dateTime); 
@@ -149,8 +207,11 @@ const app = {
                 localStorage.setItem("number-transaction", this.numberTransaction);  
 
                 this.getTransactionHistory()
+
         },
-        currentBalance() {                         
+
+        currentBalance() {  
+
             localStorage.setItem("financialIncome", this.financialIncome);
             localStorage.setItem("financialExpenses", this.financialExpenses);
 
@@ -160,7 +221,9 @@ const app = {
             this.amount = this.financialIncome - this.financialExpenses;          
 
         },
+
         showCurrentBalance() {
+
             const currentBalance = document.querySelector('#current-balance');
             const financialIncome = document.querySelector('#financial-income');
             const financialExpenses = document.querySelector('#financial-expenses');       
@@ -185,13 +248,18 @@ const app = {
               financialExpenses.textContent = formatNumber(financialExpensesString);  
 
         },
+
         reload() {
+
             setTimeout(() => {
                 location.reload()
             }, 1000); 
+
         },              
     },
+    
     mounted() {       
+
        this.getCurrentDateTime()
        this.checkTransaction()
        this.setCurrentYear()
@@ -208,7 +276,9 @@ const app = {
       });
 
         observer.observe(headerElement);
+
     }
+  
 }
 
 Vue.createApp(app).mount('#app');

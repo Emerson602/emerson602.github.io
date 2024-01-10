@@ -5,7 +5,7 @@
 }
 
 :root {    
-    --LightSkyBlue: #B0C4DE; 
+    --Purple: #A020F0; 
 }
 
 body {
@@ -58,6 +58,17 @@ input, select {
     width: 0px;
   }
 
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+
+#btn-modal {
+    background-color: var(--Purple);
+}
+
 @media(max-width: 768px) {
     #app {
         width: 100%;
@@ -77,8 +88,6 @@ input, select {
 
 #footer {
     position: relative;
-    bottom: 0;
-    text-align: center;
-    width: 100%;    
+    bottom: -30px;  
 }
 

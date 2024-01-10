@@ -74,6 +74,13 @@
         
             </div>
             
+            <div>   
+                <div v-if="showModal" id="modal" class="bg-warning rounded border-0 col-10 col-md-4 d-flex flex-column justify-content-center align-items-center p-4">
+                    <span class="mt-3">Transação realizada com sucesso!</span>
+                    <button @click="closeModal" id="btn-modal" class="col-10 col-md-6 p-2 rounded border-0 text-dark d-block mt-3">Fechar</button>
+                </div>               
+            </div>
+            
             <div  id="historic" class="mt-5">
                 
                 <h2 class="mb-5">Historico de transações:</h2>                
@@ -86,11 +93,11 @@
                 
        </main>
      
-
+       <footer id="footer" class="text-center mt-5 text-center"></footer>
 
     </div>   
 
-    <footer id="footer" class="text-center mt-5 mb-1"></footer>
+    
 
     <script type="text/javascript" src="./app.js"></script> 
     
