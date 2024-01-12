@@ -16,7 +16,10 @@ const app = {
             applyColor: 'success',
             historyType: '', 
             headerVisible: false,   
-            showModal: false,                                       
+            showModal: false,
+            currentDay: '',
+            currentMonth: '',
+            currentYear: '',              
         }
     },
     methods: {
@@ -27,24 +30,61 @@ const app = {
                   const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};                  
                   const formattedDateTime = this.currentDateTime.toLocaleDateString('pt-BR', options);                                         
                   localStorage.setItem("dateTime", formattedDateTime);
-                  this.dateTime = localStorage.getItem("dateTime")                               
-            }, 1000) 
+                  this.dateTime = localStorage.getItem("dateTime") 
 
+                  this.convertCurrentDate()
+                  this.getTransactionHistory()                                                     
+            }, 1000) 
          }, 
+
+         convertCurrentDate() {
+
+            let dateTimeString = this.dateTime.split(' ')                     
+            let dayNumber = parseInt(dateTimeString [0]) 
+            let monthNumber =  dateTimeString [2]
+            let yearNumber =  parseInt(dateTimeString [4])            
+
+            if(monthNumber === 'janeiro') {                
+                this.currentMonth = 1
+            } else if(monthNumber === 'fevereiro') {
+                this.currentMonth = 2
+            } else if(monthNumber === 'março') {
+                this.currentMonth = 3
+            } else if(monthNumber === 'abril') {
+                this.currentMonth = 4
+            } else if(monthNumber === 'maio') {
+                this.currentMonth = 5
+            } else if(monthNumber === 'junho') {
+                this.currentMonth = 6
+            } else if(monthNumber === 'julho') {
+                this.currentMonth = 7
+            } else if(monthNumber === 'agosto') {
+                this.currentMonth = 8
+            } else if(monthNumber === 'setembro') {
+                this.currentMonth = 9
+            } else if(monthNumber === 'outubro') {
+                this.currentMonth = 10
+            } else if(monthNumber === 'novembro') {
+                this.currentMonth = 11
+            } else if(monthNumber === 'dezembro') {
+                this.currentMonth = 12
+            } 
+
+            this.currentDay = dayNumber    
+            this.currentYear = yearNumber               
+         },
 
         setCurrentYear() {         
 
             const footer = document.querySelector('#footer');   
             
             footer.innerText = `Financial control © - ${this.currentDateTime.getFullYear()}`
-
         },
 
         scrollToHome() {
 
             const home = document.querySelector('#app')
-            home.scrollIntoView({ behavior: 'smooth' });     
-
+            home.scrollIntoView({ behavior: 'smooth' });   
         },
 
         scrollToForm() {
@@ -53,8 +93,7 @@ const app = {
             form.scrollIntoView({ behavior: 'smooth' });    
 
             this.homeButton = false
-            this.showHomeButton()    
-
+            this.showHomeButton()   
         },
 
         scrollToHistoric() {
@@ -64,7 +103,6 @@ const app = {
 
             this.homeButton = false
             this.showHomeButton()   
-
         },
 
         checkTransaction() {
@@ -72,13 +110,11 @@ const app = {
             if(this.numberTransaction <= 0) {
                 this.noTransaction = !this.noTransaction; 
             } 
-
         }, 
 
         showHomeButton() {
 
             this.homeButton = !this.homeButton;
-
         },
 
         handleHeaderIntersection(entries) {
@@ -90,16 +126,15 @@ const app = {
               } else {                
                 this.headerVisible = false;                
               }
-            });
-
-          },
+            });            
+        },
 
           handleHeaderVisibility() {
 
             this.homeButton = true
             this.showHomeButton()
 
-          },     
+        },     
 
         getTransactionHistory() {
 
@@ -108,29 +143,69 @@ const app = {
             let count = 0;
 
             for (let i = 0; i < this.numberTransaction; i++) {
+
                 count += 1;
                  
                 const transactionDate = localStorage.getItem(`transaction-date-${count}`, this.dateTime);
                 const transactionDescription = localStorage.getItem(`transaction-description-${count}`, this.descriptionInput);
                 const transactionType = localStorage.getItem(`transaction-type-${count}`, this.typeInput);
-                const transactionValue = localStorage.getItem(`transaction-value-${count}`, this.valueInput);              
-               
-               // inicio 
-               
-                let newString = transactionDate.split(" ");
+                const transactionValue = localStorage.getItem(`transaction-value-${count}`, this.valueInput);       
+                
+                // home
+                    
+                let newTransactionString = transactionDate.split(" ");
                 let index = count;
-                let day = newString[0];
-                let month = newString[2];
-                let year = newString[4];
-                let hour = newString[6];                
-                console.log(`${index}: ${day} ${month} ${year} ${hour}`)
+                let oldDay = parseInt(newTransactionString[0]);
+                let monthString = newTransactionString[2];
+                let oldMonth; 
+                
+                if(monthString === 'janeiro') {
+                    oldMonth = 1
+                } else if(monthString === 'fevereiro') {
+                    oldMonth = 2
+                } else if(monthString === 'março') {
+                    oldMonth = 3
+                } else if(monthString === 'abril') {
+                    oldMonth = 4
+                } else if(monthString === 'maio') {
+                    oldMonth = 5
+                } else if(monthString === 'junho') {
+                    oldMonth = 6
+                } else if(monthString === 'julho') {
+                    oldMonth = 7
+                } else if(monthString === 'agosto') {
+                    oldMonth = 8
+                } else if(monthString === 'setembro') {
+                    oldMonth = 9
+                } else if(monthString === 'outubro') {
+                    oldMonth = 10
+                } else if(monthString === 'novembro') {
+                    oldMonth = 11
+                } else if(monthString === 'dezembro') {
+                    oldMonth = 12
+                }  
+                
+                let oldYear = parseInt(newTransactionString[4])
               
-               // final
+
+                if(this.currentDay >= 1 && this.currentMonth >= oldMonth && this.currentYear > oldYear) { 
+
+                    localStorage.removeItem(`transaction-date-${count}`, this.dateTime);
+                    localStorage.removeItem(`transaction-description-${count}`, this.descriptionInput);
+                    localStorage.removeItem(`transaction-type-${count}`, this.typeInput);
+                    localStorage.removeItem(`transaction-value-${count}`, this.valueInput); 
+
+                    count -= 1
+                    this.reload()
+                } 
+
+                // final
+
                 this.historyType = transactionType;
 
                 this.setColor();
    
-                this.transactionList.push(`  
+                this.transactionList.unshift(`  
                   <div class="d-flex flex-column align-items-center justify-content-center bg-light p-3 border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2  border border-${this.applyColor}">    
                     
                     <span id="data" class="text-center">${transactionDate}</span>   
@@ -145,10 +220,10 @@ const app = {
                     
                   </div>                                             
                 `);                
+                
             }  
-
         }, 
-
+        
         setColor() {   
 
             if(this.historyType === 'Despesa') {
@@ -159,7 +234,6 @@ const app = {
             if(this.historyType === 'Receita'){
                 this.applyColor = 'success'
             }
-
         },
 
         newTransaction() {         
@@ -179,21 +253,19 @@ const app = {
             this.checkTransaction()        
             this.currentBalance()
             this.scrollToHome()
-            this.openModal()                      
- 
+            this.openModal()                   
         }, 
         
         openModal() {
         
             this.showModal = true; 
-
         },
 
         closeModal() { 
 
-            this.showModal = false;                   
+            this.showModal = false; 
+            this.scrollToHome()                  
             this.reload()
-
         },
 
         storeData() {
@@ -207,7 +279,6 @@ const app = {
                 localStorage.setItem("number-transaction", this.numberTransaction);  
 
                 this.getTransactionHistory()
-
         },
 
         currentBalance() {  
@@ -218,8 +289,7 @@ const app = {
             this.financialIncome = parseInt(localStorage.getItem("financialIncome"));
             this.financialExpenses = parseInt(localStorage.getItem("financialExpenses"));  
         
-            this.amount = this.financialIncome - this.financialExpenses;          
-
+            this.amount = this.financialIncome - this.financialExpenses;        
         },
 
         showCurrentBalance() {
@@ -246,7 +316,6 @@ const app = {
               currentBalance.textContent = formatNumber(amountString);
               financialIncome.textContent = formatNumber(financialIncomeString);
               financialExpenses.textContent = formatNumber(financialExpensesString);  
-
         },
 
         reload() {
@@ -254,7 +323,6 @@ const app = {
             setTimeout(() => {
                 location.reload()
             }, 1000); 
-
         },              
     },
     
@@ -277,8 +345,7 @@ const app = {
 
         observer.observe(headerElement);
 
-    }
-  
+    }  
 }
 
 Vue.createApp(app).mount('#app');
