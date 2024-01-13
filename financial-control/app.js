@@ -188,7 +188,17 @@ const app = {
                 let oldYear = parseInt(newTransactionString[4])
               
 
-                if(this.currentDay >= 1 && this.currentMonth >= oldMonth && this.currentYear > oldYear) { 
+                if(this.currentDay >= oldDay && this.currentMonth >= oldMonth && this.currentYear > oldYear) { 
+
+                    localStorage.removeItem(`transaction-date-${count}`, this.dateTime);
+                    localStorage.removeItem(`transaction-description-${count}`, this.descriptionInput);
+                    localStorage.removeItem(`transaction-type-${count}`, this.typeInput);
+                    localStorage.removeItem(`transaction-value-${count}`, this.valueInput); 
+
+                    count -= 1
+                    this.reload()
+                    
+                } else if(this.currentDay >= 1 && this.currentMonth > oldMonth && this.currentYear > oldYear) {
 
                     localStorage.removeItem(`transaction-date-${count}`, this.dateTime);
                     localStorage.removeItem(`transaction-description-${count}`, this.descriptionInput);
