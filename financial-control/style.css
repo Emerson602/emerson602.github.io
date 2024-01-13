@@ -43,6 +43,25 @@ input, select {
     outline: none;      
 }
 
+#controlsToErase, #deleteAllConfirmation  {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);      
+}
+
+#deleteButton {
+    background-color: transparent;
+    position: absolute;
+    top: 2%;
+    right: 2%;     
+}
+
+#deleteButton svg:hover {
+    color: #000;
+    transition: 2s;
+}
+
 #transactions-list { 
     height: auto;   
     max-height: 1500px;    
@@ -65,7 +84,7 @@ input, select {
     transform: translate(-50%, -50%);   
 }
 
-#btn-modal {
+#btn-modal, #btn-delete {
     background-color: var(--Purple);
 }
 

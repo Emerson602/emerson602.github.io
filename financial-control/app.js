@@ -17,6 +17,8 @@ const app = {
             historyType: '', 
             headerVisible: false,   
             showModal: false,
+            showControlsToErase: false,
+            deleteAllConfirmation: false,
             currentDay: '',
             currentMonth: '',
             currentYear: '',              
@@ -274,6 +276,29 @@ const app = {
         closeModal() { 
 
             this.showModal = false; 
+            this.scrollToHome()                  
+            this.reload()
+        },
+
+        openControlsToErase () {
+            this.showControlsToErase = true;
+        },
+
+        closeControlsToErase () {
+            this.showControlsToErase = false;
+        },
+
+        openDeleteAllConfirmation () {
+            this.deleteAllConfirmation = true;
+        },
+
+        
+        closeDeleteAllConfirmation () {
+            this.deleteAllConfirmation = false;
+        },
+
+        cleanAllHistory() {
+            localStorage.clear();
             this.scrollToHome()                  
             this.reload()
         },
