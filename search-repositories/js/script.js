@@ -8,7 +8,7 @@ function renderRepositories(repositories) {
     content.innerHTML = '';
 
     if (repositories.length === 0) {
-        const noRepoRow = document.createElement('tr');
+        const noRepoRow = document.createElement('tr');        
         const noRepoCell = document.createElement('td');
         noRepoCell.setAttribute('colspan', '4');
         noRepoCell.textContent = 'Nenhum repositório encontrado para este usuário.';
@@ -16,23 +16,25 @@ function renderRepositories(repositories) {
         content.appendChild(noRepoRow);
     } else {
         repositories.forEach(({ name, description, language, stargazers_count }) => {
-            const row = document.createElement('tr');
-
+            const row = document.createElement('tr');            
+            row.setAttribute('class', 'd-flex flex-column')      
+            
             const nameCell = document.createElement('td');
             const nameLink = document.createElement('a');
+          
             nameLink.href = `https://github.com/${username}/${name}`;
             nameLink.target = '_blank';
-            nameLink.textContent = name;
+            nameLink.innerHTML = `<span class="fw-bold text-dark">Repository name:</span><br>${name}`;
             nameCell.appendChild(nameLink);
 
             const descriptionCell = document.createElement('td');
-            descriptionCell.textContent = description || 'N/A';
+            descriptionCell.innerHTML = `<span class="fw-bold">Description:</span><br>${description}` || 'N/A';
 
             const languageCell = document.createElement('td');
-            languageCell.textContent = language || 'N/A';
+            languageCell.innerHTML = `<span class="fw-bold">Language:</span><br>${language}` || 'N/A';
 
             const starsCell = document.createElement('td');
-            starsCell.textContent = stargazers_count || '0';
+            starsCell.innerHTML = `<span class="fw-bold">Stars:</span><br>${stargazers_count}` || '0';
 
             [nameCell, descriptionCell, languageCell, starsCell].forEach(cell => {
                 row.appendChild(cell);
@@ -49,7 +51,8 @@ function getRepository() {
         .then((response) => {
             if (response.status === 200) {
                 const repositories = response.data;
-                renderRepositories(repositories);
+                console.log(repositories)
+                renderRepositories(repositories);                 
             } else {
                 content.innerHTML = '';
                 const errorRow = document.createElement('tr');
