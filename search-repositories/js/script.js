@@ -17,7 +17,8 @@ function renderRepositories(repositories) {
     } else {
         repositories.forEach(({ name, description, language, stargazers_count }) => {
             const row = document.createElement('tr');            
-            row.setAttribute('class', 'd-flex flex-column')      
+            row.setAttribute('class', 'd-flex flex-column')
+            row.setAttribute('id', 'row-tr')      
             
             const nameCell = document.createElement('td');
             const nameLink = document.createElement('a');

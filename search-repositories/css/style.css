@@ -175,8 +175,7 @@ body{
 
   #content a{
 
-      color: #255ab2;
-      border-bottom: solid 0.5px #cdd9e5;                       
+      color: #255ab2;                             
       margin: 30px 0;  
       padding: 0 0 5px 0;          
       width: 80vw; 
@@ -186,8 +185,7 @@ body{
 
 #content a:hover{
 
-  color: #adbac7;
-  border-bottom: solid 0.5px #cdd9e5;                       
+  color: #adbac7;                        
   margin: 30px 0;  
   padding: 0 0 5px 0;     
   text-decoration: none; 
@@ -195,7 +193,20 @@ body{
     
 } 
 
+#row-tr {
+  margin-top: 20px;  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);  
+  padding: 15px;
+  background-color: #373e47;
+  border-radius: 8px;
+}
 
+#row-tr td {  
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #fff;
+}
 
 
 
