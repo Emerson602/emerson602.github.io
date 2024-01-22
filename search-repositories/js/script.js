@@ -25,7 +25,7 @@ function renderRepositories(repositories) {
           
             nameLink.href = `https://github.com/${username}/${name}`;
             nameLink.target = '_blank';
-            nameLink.innerHTML = `<span class="fw-bold text-dark">Repository name:</span><br>${name}`;
+            nameLink.innerHTML = `<span class="fw-bold text-light">Repository name:</span><br>${name}`;
             nameCell.appendChild(nameLink);
 
             const descriptionCell = document.createElement('td');
