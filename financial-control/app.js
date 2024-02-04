@@ -151,9 +151,8 @@ const app = {
                 const transactionDate = localStorage.getItem(`transaction-date-${count}`, this.dateTime);
                 const transactionDescription = localStorage.getItem(`transaction-description-${count}`, this.descriptionInput);
                 const transactionType = localStorage.getItem(`transaction-type-${count}`, this.typeInput);
-                const transactionValue = localStorage.getItem(`transaction-value-${count}`, this.valueInput);       
-                
-                // home
+                const transactionValue = parseInt(localStorage.getItem(`transaction-value-${count}`, this.valueInput));       
+                            
                     
                 let newTransactionString = transactionDate.split(" ");
                 let index = count;
@@ -210,13 +209,12 @@ const app = {
                     count -= 1
                     this.reload()
                 } 
-
-                // final
+         
 
                 this.historyType = transactionType;
 
                 this.setColor();
-   
+               
                 this.transactionList.unshift(`  
                   <div class="d-flex flex-column align-items-center justify-content-center bg-light p-3 border-5 border-start-0 border-start-top border-bottom-0 border-top-0 rounded mt-2  border border-${this.applyColor}">    
                     
@@ -227,12 +225,12 @@ const app = {
 
                     <div class="d-flex flex-row align-items-center justify-content-center">
                         <span class="m-2">Valor: </span>               
-                        <span id="historical-transaction-value" class="text-start text-sm-center text-${this.applyColor} fw-bold"> ${transactionValue}</span>
+                        <span id="historical-transaction-value" class="text-start text-sm-center text-${this.applyColor} fw-bold"> R$ ${transactionValue.toFixed(2)}</span>
                     </div>
                     
                   </div>                                             
-                `);                
-                
+                `);             
+              
             }  
         }, 
         

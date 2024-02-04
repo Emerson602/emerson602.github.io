@@ -53,8 +53,8 @@ input, select {
 #deleteButton {
     background-color: transparent;
     position: absolute;
-    top: 2%;
-    right: 2%;     
+    top: 20px;
+    right: 20px;     
 }
 
 #deleteButton svg:hover {
