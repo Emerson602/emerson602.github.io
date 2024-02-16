@@ -17,7 +17,9 @@ function myEquation() {
     let c = coefficientC;   
     
     let delta = (coefficientB ** 2) - 4 * coefficientA* coefficientC;
-    let deltaRoot = Math.sqrt(delta);
+
+    let deltaRoot = parseInt(Math.sqrt(delta));
+
     let negativeCoefficientB = (-coefficientB); 
 
     let firstRoot =  (negativeCoefficientB + deltaRoot) / (coefficientA * (2));
@@ -27,12 +29,17 @@ function myEquation() {
     let exponentiation = b**2;
     let operator = (expression > 0) ? "+" : "";
 
-    if (delta < 0) {
+
+
+    if (delta < 0) {    
+
+        let complexRoot = Math.sqrt(Math.abs(delta)).toFixed(1) + 'i';            
+        deltaRoot = complexRoot  
 
         result.innerHTML = `Δ = ${b}² - 4. ${a} .${c} <br>
         Δ = ${exponentiation} ${operator} ${expression} <br> 
         Δ = ${exponentiation + expression} <br>
-        √ ${exponentiation + expression} = ${deltaRoot.toFixed(1)} <br>
+        √ ${exponentiation + expression} = ${deltaRoot} <br>
         A equação não possui raízes reais,<br> apenas raízes complexas.`;
 
     } else if (delta === 0) { 
