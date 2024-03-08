@@ -3,7 +3,6 @@ const title = document.querySelector('#title');
 const text = document.querySelector('#text');
 let iTitle = 0;
 let iContent = 0;
-let textTitle = 'Parabens!';
 let textContent = 'Que este dia especial seja repleto de alegria, amor e momentos inesquecíveis! Que você seja cercado por amigos, família e todos aqueles que te fazem feliz. Que este novo ano de vida seja repleto de realizações e bênçãos. Feliz aniversário!';
 let speed = 50;
 const home = document.querySelector('#home')
