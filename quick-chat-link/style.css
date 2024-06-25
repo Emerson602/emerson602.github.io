@@ -15,7 +15,15 @@
 	height: auto;
 }
 
-#input, #select{
+#input, #select, #button{
 	outline: none;	
+	width: 300px;
+}
+
+@media(max-width: 500px) {
+	#input, #select, #button{
+		outline: none;	
+		width: 90vw;
+	}	
 }
 
