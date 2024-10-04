@@ -3,22 +3,19 @@
   padding: 0;  
   box-sizing: border-box;
 }
- 
+
 body {
-
-  background-image: url(./img/background.webp);
-  background-repeat: repeat;
-  background-size: cover; 
-} 
+  background-color: #000;
+}
 .container {
-
+  padding: 100px 0;
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;   
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 0;  
+  padding: 50px 0;    
 } 
 
 .equation {
@@ -45,9 +42,9 @@ body {
   }
 }
 
-.baskara-img {
-
-    margin: 10px 0 0 0;
+.baskara-img { 
+  
+  margin: 10px 0 0 0;
 }
 
 @media (max-width: 500px) {
