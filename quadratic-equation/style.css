@@ -7,15 +7,9 @@
 body {
   background-color: #000;
 }
-.container {
-  padding: 100px 0;
+.container {  
   width: 100%;
-  height: auto;
-  display: flex;   
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px 0;    
+  height: auto;  
 } 
 
 .equation {
@@ -31,6 +25,10 @@ body {
   box-shadow: 0 4px 8px 0 rgb(37 211 102 / 60%);
   padding: 30px 10px 15px 10px;
   border: solid 2px rgba(37,211,102,1);  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 500px){
@@ -43,7 +41,7 @@ body {
 }
 
 .baskara-img { 
-  
+
   margin: 10px 0 0 0;
 }
 
