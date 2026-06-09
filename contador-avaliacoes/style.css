@@ -79,7 +79,7 @@ th {
     margin: 0 0 10px 0;
  }
 
-@media (max-width: 740px) {
+@media (max-width: 1080px) {
  button, input {
     margin: 5px 5px;
  }
@@ -94,7 +94,7 @@ th {
  .card {
     text-align: center;
     width: 45%;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     width: 90%;
  }
 
@@ -106,7 +106,7 @@ th {
 
  .container-buttons button {
     width: 40%;
-    font-size: 1.2rem;
+    font-size: 1rem;
  }
 
  .filters {
@@ -121,7 +121,7 @@ th {
     margin: 5px 0;
     text-align: center;
     padding: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
  }
 
 }
