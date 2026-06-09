@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de avaliações</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <h1>Avaliações</h1>
+
+  <textarea id="input" placeholder="Cole aqui as avaliações..."></textarea>
+
+  <br>
+
+  <div class="filters">
+      <select id="mes">
+    <option value="todos" selected>Todos os meses</option>
+    <option value="01">Janeiro</option>
+    <option value="02">Fevereiro</option>
+    <option value="03">Março</option>
+    <option value="04">Abril</option>
+    <option value="05">Maio</option>
+    <option value="06">Junho</option>
+    <option value="07">Julho</option>
+    <option value="08">Agosto</option>
+    <option value="09">Setembro</option>
+    <option value="10">Outubro</option>
+    <option value="11">Novembro</option>
+    <option value="12">Dezembro</option>
+  </select>
+
+  <select id="ano">
+    <option value="2026" selected>2026</option>
+    <option value="2025">2025</option>
+    <option value="2024">2024</option>
+  </select>
+
+  <select id="nota">
+    <option value="todas" selected>Todas as notas</option>
+    <option value="5.0">5.0</option>
+    <option value="4.0">4.0</option>
+    <option value="3.0">3.0</option>
+    <option value="2.0">2.0</option>
+    <option value="1.0">1.0</option>
+  </select>
+
+  </div>
+
+  <div class="container-buttons">
+    <button onclick="processar()">Processar</button>
+    <button onclick="exportarCSV()">Exportar CSV</button>
+  </div>
+
+
+  <div class="cards" id="resumo"></div>
+
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nota</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
