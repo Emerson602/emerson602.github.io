@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Página</title>
+    <style> 
+* {
+margin: 0;
+padding: 0;
+}
+
+img {
+width: 100vw;
+height: auto;
+}
+
+button {
+background-color: green;
+color: #fff;
+width: 150px;
+height: 40px;
+border-radius: 4px;
+border: none;
+transition: 1,5;
+margin: 10px;
+}
+
+button:hover {
+cursor: pointer;
+background-color: #141414;
+
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+}
+
+
+    </style>        
+</head>
+<body>
+  <did id="content">
+    
+  </div>
+
+  <script>
+    const conteudo = document.querySelector('#content');
+    let index = 1;
+    function indexar() {
+      
+      content.innerHTML = `
+      <img src="./prints/${index}.webp">
+      <div class="control">
+          <button onclick="back()">Anterior</button>
+          <button onclick="next()">Proxima</button>
+      </div>  
+
+      `;
+    }
+
+    indexar();
+
+    function next() {
+      if(index < 4) {
+        index += 1;
+        indexar();
+      }
+    }
+
+    function back() {
+      if(index > 1) {
+        index -= 1;
+        indexar();
+      }
+    }
+     
+  </script>
+
+
+</body>
+
+</html>
